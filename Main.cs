@@ -116,8 +116,10 @@ namespace BladeOfTheAssassin
           
 
             AbilityManager.Instance.Update();
+            if (Main.Debug) Log.Diagnostics("After AbilityManager update.");
             UnitManager.Instance.Update();
-          //  DiminishingReturnManager.Instance.Update(); //possible bottleneck in big enviroments.
+            if (Main.Debug) Log.Diagnostics("After UnitManager update.");
+            //  DiminishingReturnManager.Instance.Update(); //possible bottleneck in big enviroments.
 
             base.Pulse();
         }
