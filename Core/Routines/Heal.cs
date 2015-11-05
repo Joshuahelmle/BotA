@@ -26,8 +26,6 @@ namespace BladeOfTheAssassin.Core.Routines
            // if (Me.HasTotalLossOfControl())
            //     return false;
 
-            if (Main.BurstTimer.IsRunning)
-                return false;
           return await HealRotation();
         }
 

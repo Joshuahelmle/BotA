@@ -35,7 +35,6 @@ namespace BladeOfTheAssassin
 
         public static Version Version { get { return _version; } }
         public static Stopwatch DeathTimer = new Stopwatch();
-        public static Stopwatch BurstTimer = new Stopwatch();
         public static Stopwatch PauseTimer = new Stopwatch();
 
         private static LocalPlayer Me { get { return StyxWoW.Me; } }
