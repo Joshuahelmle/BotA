@@ -1,0 +1,16 @@
+C:\Users\josh\Source\Repos\BotA\BladeOfTheAssassin\obj\Debug\BladeOfTheAssassin.Interface.Resources.resources
+C:\Users\josh\Source\Repos\BotA\BladeOfTheAssassin\obj\Debug\BladeOfTheAssassin.Interface.Settings.resources
+C:\Users\josh\Source\Repos\BotA\BladeOfTheAssassin\obj\Debug\BladeOfTheAssassin.csproj.GenerateResource.Cache
+C:\Users\josh\Source\Repos\BotA\BladeOfTheAssassin\bin\Debug\BladeOfTheAssassin.dll
+C:\Users\josh\Source\Repos\BotA\BladeOfTheAssassin\bin\Debug\BladeOfTheAssassin.pdb
+C:\Users\josh\Source\Repos\BotA\BladeOfTheAssassin\bin\Debug\GreyMagic.dll
+C:\Users\josh\Source\Repos\BotA\BladeOfTheAssassin\bin\Debug\Honorbuddy.exe
+C:\Users\josh\Source\Repos\BotA\BladeOfTheAssassin\bin\Debug\Tripper.Tools.dll
+C:\Users\josh\Source\Repos\BotA\BladeOfTheAssassin\bin\Debug\RemoteASM.dll
+C:\Users\josh\Source\Repos\BotA\BladeOfTheAssassin\bin\Debug\RemoteASMNative.dll
+C:\Users\josh\Source\Repos\BotA\BladeOfTheAssassin\bin\Debug\Newtonsoft.Json.dll
+C:\Users\josh\Source\Repos\BotA\BladeOfTheAssassin\bin\Debug\Tripper.RecastManaged.dll
+C:\Users\josh\Source\Repos\BotA\BladeOfTheAssassin\bin\Debug\System.Data.SQLite.dll
+C:\Users\josh\Source\Repos\BotA\BladeOfTheAssassin\bin\Debug\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\josh\Source\Repos\BotA\BladeOfTheAssassin\obj\Debug\BladeOfTheAssassin.dll
+C:\Users\josh\Source\Repos\BotA\BladeOfTheAssassin\obj\Debug\BladeOfTheAssassin.pdb
