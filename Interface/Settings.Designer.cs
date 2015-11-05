@@ -46,6 +46,8 @@ namespace BladeOfTheAssassin.Interface {
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabSettings = new System.Windows.Forms.TabPage();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.T184PCB = new System.Windows.Forms.CheckBox();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.FeintHp = new System.Windows.Forms.TextBox();
             this.RecupHP = new System.Windows.Forms.TextBox();
@@ -88,13 +90,12 @@ namespace BladeOfTheAssassin.Interface {
             this.UseARCB = new System.Windows.Forms.CheckBox();
             this.KSOnlyBossCB = new System.Windows.Forms.CheckBox();
             this.UseKSCB = new System.Windows.Forms.CheckBox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.T184PCB = new System.Windows.Forms.CheckBox();
             this.vt.SuspendLayout();
             this.tabAbout.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabSettings.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.Racials.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -104,7 +105,6 @@ namespace BladeOfTheAssassin.Interface {
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // FormHeader
@@ -278,7 +278,7 @@ namespace BladeOfTheAssassin.Interface {
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(3, -3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(229, 463);
+            this.pictureBox1.Size = new System.Drawing.Size(283, 463);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
@@ -300,7 +300,26 @@ namespace BladeOfTheAssassin.Interface {
             this.tabSettings.Size = new System.Drawing.Size(822, 463);
             this.tabSettings.TabIndex = 2;
             this.tabSettings.Text = "Global";
-            this.tabSettings.Click += new System.EventHandler(this.tabSettings_Click);
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.T184PCB);
+            this.groupBox7.Location = new System.Drawing.Point(399, 237);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(157, 88);
+            this.groupBox7.TabIndex = 11;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Sets";
+            // 
+            // T184PCB
+            // 
+            this.T184PCB.AutoSize = true;
+            this.T184PCB.Location = new System.Drawing.Point(15, 30);
+            this.T184PCB.Name = "T184PCB";
+            this.T184PCB.Size = new System.Drawing.Size(118, 22);
+            this.T184PCB.TabIndex = 0;
+            this.T184PCB.Text = "T18 4 Piece Set";
+            this.T184PCB.UseVisualStyleBackColor = true;
             // 
             // groupBox10
             // 
@@ -559,6 +578,7 @@ namespace BladeOfTheAssassin.Interface {
             // InterruptKickCB
             // 
             this.InterruptKickCB.AutoSize = true;
+            this.InterruptKickCB.Enabled = false;
             this.InterruptKickCB.Location = new System.Drawing.Point(6, 24);
             this.InterruptKickCB.Name = "InterruptKickCB";
             this.InterruptKickCB.Size = new System.Drawing.Size(52, 22);
@@ -745,26 +765,6 @@ namespace BladeOfTheAssassin.Interface {
             this.UseKSCB.Text = "Use KillingSpree";
             this.UseKSCB.UseVisualStyleBackColor = true;
             // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.T184PCB);
-            this.groupBox7.Location = new System.Drawing.Point(399, 237);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(157, 88);
-            this.groupBox7.TabIndex = 11;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Sets";
-            // 
-            // T184PCB
-            // 
-            this.T184PCB.AutoSize = true;
-            this.T184PCB.Location = new System.Drawing.Point(15, 30);
-            this.T184PCB.Name = "T184PCB";
-            this.T184PCB.Size = new System.Drawing.Size(118, 22);
-            this.T184PCB.TabIndex = 0;
-            this.T184PCB.Text = "T18 4 Piece Set";
-            this.T184PCB.UseVisualStyleBackColor = true;
-            // 
             // Settings
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -788,6 +788,8 @@ namespace BladeOfTheAssassin.Interface {
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabSettings.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
             this.Racials.ResumeLayout(false);
@@ -806,8 +808,6 @@ namespace BladeOfTheAssassin.Interface {
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -827,7 +827,6 @@ namespace BladeOfTheAssassin.Interface {
         private GroupBox Buffs;
         private CheckBox applyPoisonsCB;
         private ComboBox MHPoisonBox;
-        private PictureBox pictureBox1;
         private Label label3;
         private TableLayoutPanel tableLayoutPanel1;
         private RichTextBox rtfAbout;
@@ -875,5 +874,6 @@ namespace BladeOfTheAssassin.Interface {
         private CheckBox UseSDCB;
         private GroupBox groupBox7;
         private CheckBox T184PCB;
+        private PictureBox pictureBox1;
     }
 }

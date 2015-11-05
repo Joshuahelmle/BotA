@@ -50,7 +50,7 @@ namespace BladeOfTheAssassin.Core.Routines
                 Log.Diagnostics("In PreCombatRotationCall()");
             }
 
-            /*
+            
             if (await Abilities.Cast<StealthAbility>(Me)) return true;
             //if (await Abilities.Cast<SapAbility>(MyCurrentTarget)) return true;
             //if (await Abilities.Cast<SapAbility>(UnitManager.Instance.SapTarget)) return true;
@@ -58,15 +58,16 @@ namespace BladeOfTheAssassin.Core.Routines
             if (await Abilities.Cast<InstantPoison>(Me)) return true;
            }
            else { if (await Abilities.Cast<DeadlyPoison>(Me)) return true;}
-
+            if (await Abilities.Cast<WoundPoison>(Me)) return true;
             if (await Abilities.Cast<CripplingPoison>(Me)) return true;
             if (Me.Specialization == WoWSpec.RogueSubtlety && (Me.Combat || HotKeyManager.Questing || Me.AuraExists(SpellBook.AuraVanish)))
             {
                 return await Combat.Rotation();
             }
            
-          //  if (await Abilities.Cast<BurstOfSpeedAbility>(Me)) return true;
-        */
+            
+        
+           // if (await Abilities.Cast<BurstOfSpeedAbility>(Me)) return true;
             return false;
         }
 
