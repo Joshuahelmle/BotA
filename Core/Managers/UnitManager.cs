@@ -69,7 +69,7 @@ namespace BladeOfTheAssassin.Core.Managers
         /// Gets the list of the last known surrounding enemies (Cached - ensure to check for null and valid units). 
         /// </summary>
         public List<WoWUnit> LastKnownSurroundingEnemies { get; private set; }
-
+        public List<WoWUnit> LastKnownEnemiesInMeeleRange { get; private set; }
         public List<WoWUnit> EnemiesNotInCombat { get; private set; }
         public Dictionary<WoWUnit, DateTime> LastSappedUnits { get; private set; }
         public List<WoWUnit> SapTargetDelete { get; private set; }
@@ -91,6 +91,7 @@ namespace BladeOfTheAssassin.Core.Managers
         public UnitManager()
         {
             this.LastKnownSurroundingEnemies = new List<WoWUnit>();
+            LastKnownEnemiesInMeeleRange = new List<WoWUnit>();
             EnemiesNotInCombat = new List<WoWUnit>();
             LastSappedUnits = new Dictionary<WoWUnit, DateTime>();
             SapTargetDelete = new List<WoWUnit>();
@@ -124,7 +125,7 @@ namespace BladeOfTheAssassin.Core.Managers
             {
                 this.LastKnownSurroundingEnemies = ObjectManager.GetObjectsOfTypeFast<WoWUnit>().Where(o =>
                     o.Attackable &&
-                    (o.hitBoxDistance() <= SettingsManager.Instance.AoeRange || o.IsWithinMeleeRange || HotKeyManager.ForceAttack) &&
+                    (o.hitBoxDistance() <= SettingsManager.Instance.AoeRange) &&
                     o.IsValid &&
                     o.IsAlive &&
                     !o.IsFriendly &&
@@ -134,7 +135,8 @@ namespace BladeOfTheAssassin.Core.Managers
                     )
                     .OrderBy(o => o.Distance)
                     .ToList();
-             
+
+                LastKnownEnemiesInMeeleRange = LastKnownSurroundingEnemies.Where(o => o.IsWithinMeleeRange).ToList();
                 LastKnownNotPoisonedEnemies = LastKnownSurroundingEnemies.Where(o => !o.AuraExists(SpellBook.AuraDeadlyPoison, true)).ToList();
 
                 LastKnownNonBleedingEnemies =

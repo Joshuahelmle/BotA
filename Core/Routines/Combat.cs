@@ -110,7 +110,7 @@ namespace BladeOfTheAssassin.Core.Routines
             #region
             if (Me.Specialization == WoWSpec.RogueCombat)
             {
-                switch (UnitManager.Instance.LastKnownSurroundingEnemies.Count)
+                switch (UnitManager.Instance.LastKnownEnemiesInMeeleRange.Count)
                 {
                     case 0:
                         return false;
