@@ -32,10 +32,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GreyMagic">
-      <HintPath>..\..\..\..\Documents\HB Fresh\GreyMagic.dll</HintPath>
+      <HintPath>..\..\..\Documents\HB Fresh\GreyMagic.dll</HintPath>
     </Reference>
     <Reference Include="Honorbuddy">
-      <HintPath>..\..\..\..\Documents\HB Fresh\Honorbuddy.exe</HintPath>
+      <HintPath>..\..\..\Documents\HB Fresh\Honorbuddy.exe</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -50,7 +50,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Tripper.Tools">
-      <HintPath>..\..\..\..\Documents\HB Fresh\Tripper.Tools.dll</HintPath>
+      <HintPath>..\..\..\Documents\HB Fresh\Tripper.Tools.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>

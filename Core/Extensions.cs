@@ -238,7 +238,8 @@ namespace BladeOfTheAssassin.Core
         {
             return
                 thisBotBase.Name.ToUpper().Contains("ENYO") ||
-                thisBotBase.Name.ToUpper().Contains("RAID BOT");
+                thisBotBase.Name.ToUpper().Contains("RAID BOT") ||
+                thisBotBase.Name.ToUpper().Contains("HAZZ");
         }
     }
 

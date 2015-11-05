@@ -75,13 +75,19 @@ namespace BladeOfTheAssassin
                 Log.Combat(string.Format("Current Profile: {0}", GlobalSettings.Instance.LastUsedProfile));
                 Log.Combat(string.Format("{0} abilities loaded", AbilityManager.Instance.Abilities.Count));
                 Log.Combat("--------------------------------------------------");
-              //  HotKeyManager.RegisterHotKeys();
+                HotKeyManager.RegisterHotKeys();
                // DiminishingReturnManager.Instance.Init();
             }
             catch (Exception ex)
             {
                 Log.Gui(string.Format("Error Initializing Blade of the Assassin Combat Routine: {0}", ex));
             }
+        }
+
+        public override void ShutDown()
+        {
+            HotKeyManager.RemoveHotkeys();
+            base.ShutDown();
         }
 
         public override void Pulse()
