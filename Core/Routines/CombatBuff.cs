@@ -204,17 +204,19 @@ namespace BladeOfTheAssassin.Core.Routines
         {
             // use Trinket1 to burst
             if (SettingsManager.Instance.UseTrinket1ToBurst &&
-                Me.Inventory.Equipped.Trinket1.CooldownTimeLeft.Milliseconds != 0)
+                Me.Inventory.Equipped.Trinket1.CooldownTimeLeft.Milliseconds <= 0 && Me.IsWithinMeleeDistanceOfTarget())
             {
                 Me.Inventory.Equipped.Trinket1.Use();
+                Me.Inventory.Equipped.Trinket1.Use(MyCurrentTarget.Guid);
                await CommonCoroutines.SleepForLagDuration();
                
             }
 
             if (SettingsManager.Instance.UseTrinket2ToBurst &&
-                Me.Inventory.Equipped.Trinket2.CooldownTimeLeft.Milliseconds != 0)
+                Me.Inventory.Equipped.Trinket2.CooldownTimeLeft.Milliseconds <= 0 && Me.IsWithinMeleeDistanceOfTarget())
             {
                 Me.Inventory.Equipped.Trinket2.Use();
+                Me.Inventory.Equipped.Trinket2.Use(MyCurrentTarget.Guid);
                 await CommonCoroutines.SleepForLagDuration();
 
             }

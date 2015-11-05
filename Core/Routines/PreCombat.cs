@@ -3,10 +3,9 @@ using System.Threading.Tasks;
 using BladeOfTheAssassin.Core.Abilities.Combat;
 using BladeOfTheAssassin.Core.Managers;
 using BladeOfTheAssassin.Core.Utilities;
-using CommonBehaviors;
 using Styx;
 using Styx.WoWInternals.WoWObjects;
-using BladeOfTheAssassin.Core.Abilities.Sublety;
+
 
 namespace BladeOfTheAssassin.Core.Routines
 {
@@ -45,14 +44,13 @@ namespace BladeOfTheAssassin.Core.Routines
 
             if (Me.IsDead || Me.IsGhost || Me.IsCasting || Me.IsChanneling || Me.IsFlying || Me.OnTaxi || Me.Mounted)
                 return false;
-            if (Main.BurstTimer.IsRunning)
-                return false;
 
             if (Main.Debug)
             {
                 Log.Diagnostics("In PreCombatRotationCall()");
             }
 
+            
             if (await Abilities.Cast<StealthAbility>(Me)) return true;
             //if (await Abilities.Cast<SapAbility>(MyCurrentTarget)) return true;
             //if (await Abilities.Cast<SapAbility>(UnitManager.Instance.SapTarget)) return true;
@@ -60,15 +58,16 @@ namespace BladeOfTheAssassin.Core.Routines
             if (await Abilities.Cast<InstantPoison>(Me)) return true;
            }
            else { if (await Abilities.Cast<DeadlyPoison>(Me)) return true;}
-
+            if (await Abilities.Cast<WoundPoison>(Me)) return true;
             if (await Abilities.Cast<CripplingPoison>(Me)) return true;
             if (Me.Specialization == WoWSpec.RogueSubtlety && (Me.Combat || HotKeyManager.Questing || Me.AuraExists(SpellBook.AuraVanish)))
             {
                 return await Combat.Rotation();
             }
            
-          //  if (await Abilities.Cast<BurstOfSpeedAbility>(Me)) return true;
+            
         
+           // if (await Abilities.Cast<BurstOfSpeedAbility>(Me)) return true;
             return false;
         }
 

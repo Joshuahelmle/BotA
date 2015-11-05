@@ -331,11 +331,6 @@ namespace BladeOfTheAssassin.Interface
 
         #endregion
 
-        private void tabSettings_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
+      
     }
 }

@@ -44,7 +44,7 @@ namespace BladeOfTheAssassin {
         internal static ResourceManager ResourceManager {
             get {
                 if (ReferenceEquals(resourceMan, null)) {
-                    ResourceManager temp = new ResourceManager("InnerRage.Resources", typeof(Resources).Assembly);
+                    ResourceManager temp = new ResourceManager("BladeOfTheAssassin.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
