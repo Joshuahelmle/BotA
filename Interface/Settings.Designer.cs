@@ -109,15 +109,15 @@ namespace BladeOfTheAssassin.Interface {
             // 
             // FormHeader
             // 
-            this.FormHeader.BackColor = System.Drawing.Color.Firebrick;
+            this.FormHeader.BackColor = System.Drawing.Color.Yellow;
             this.FormHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.FormHeader.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormHeader.ForeColor = System.Drawing.Color.White;
+            this.FormHeader.ForeColor = System.Drawing.Color.Black;
             this.FormHeader.Location = new System.Drawing.Point(0, 0);
             this.FormHeader.Name = "FormHeader";
             this.FormHeader.Size = new System.Drawing.Size(1030, 30);
             this.FormHeader.TabIndex = 0;
-            this.FormHeader.Text = "InnerRage Settings";
+            this.FormHeader.Text = "Blade of The Assassin Settings";
             this.FormHeader.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // FormHeaderClose
