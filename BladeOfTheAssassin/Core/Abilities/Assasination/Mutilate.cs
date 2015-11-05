@@ -17,9 +17,6 @@ namespace BladeOfTheAssassin.Core.Abilities.Assasination
             : base(WoWSpell.FromId(SpellBook.CastMutilate), true, false)
         {
             Category = AbilityCategory.Combat;
-            Conditions.Add(Energy);
-            Conditions.Add(new TargetIsInHealthRangeCondition(Target, 35, 100));
-            Conditions.Add(new WillNotCapComboPointsCondition());
             
         }
 
@@ -33,7 +30,7 @@ namespace BladeOfTheAssassin.Core.Abilities.Assasination
             Conditions.Add(new InMeeleRangeCondition(target));
             Conditions.Add(Energy);
             Conditions.Add(new TargetIsInHealthRangeCondition(target, 35, 100));
-            Conditions.Add(new WillNotCapComboPointsCondition());
+            Conditions.Add(new WillNotCapComboPointsCondition(2));
             return await base.CastOnTarget(target);
         }
 

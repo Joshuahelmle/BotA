@@ -151,6 +151,9 @@ namespace BladeOfTheAssassin.Interface
             RecupHP.Text = SMInstance.Instance.RecupPercentage.ToString();
             FeintHp.Text = SMInstance.Instance.FeintPercentage.ToString();
 
+            //Set
+            T184PCB.Checked = SMInstance.Instance.T184PEnabled;
+
         }
 
         /// <summary>
@@ -204,6 +207,9 @@ namespace BladeOfTheAssassin.Interface
             SMInstance.Instance.UseFeint = FeintCB.Checked;
             SMInstance.Instance.RecupPercentage = Convert.ToInt32(RecupHP.Text);
             SMInstance.Instance.FeintPercentage = Convert.ToInt32(FeintHp.Text);
+
+            //Set
+            SMInstance.Instance.T184PEnabled = T184PCB.Checked;
 
         }
 

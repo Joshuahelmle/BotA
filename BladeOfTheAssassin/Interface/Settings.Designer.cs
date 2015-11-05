@@ -88,6 +88,8 @@ namespace BladeOfTheAssassin.Interface {
             this.UseARCB = new System.Windows.Forms.CheckBox();
             this.KSOnlyBossCB = new System.Windows.Forms.CheckBox();
             this.UseKSCB = new System.Windows.Forms.CheckBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.T184PCB = new System.Windows.Forms.CheckBox();
             this.vt.SuspendLayout();
             this.tabAbout.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -102,6 +104,7 @@ namespace BladeOfTheAssassin.Interface {
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // FormHeader
@@ -283,6 +286,7 @@ namespace BladeOfTheAssassin.Interface {
             // tabSettings
             // 
             this.tabSettings.BackColor = System.Drawing.Color.DarkGray;
+            this.tabSettings.Controls.Add(this.groupBox7);
             this.tabSettings.Controls.Add(this.groupBox10);
             this.tabSettings.Controls.Add(this.Racials);
             this.tabSettings.Controls.Add(this.groupBox5);
@@ -308,21 +312,21 @@ namespace BladeOfTheAssassin.Interface {
             this.groupBox10.Controls.Add(this.RecupCB);
             this.groupBox10.Location = new System.Drawing.Point(13, 237);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(415, 88);
+            this.groupBox10.Size = new System.Drawing.Size(380, 88);
             this.groupBox10.TabIndex = 10;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Defensives";
             // 
             // FeintHp
             // 
-            this.FeintHp.Location = new System.Drawing.Point(271, 53);
+            this.FeintHp.Location = new System.Drawing.Point(238, 53);
             this.FeintHp.Name = "FeintHp";
             this.FeintHp.Size = new System.Drawing.Size(100, 26);
             this.FeintHp.TabIndex = 5;
             // 
             // RecupHP
             // 
-            this.RecupHP.Location = new System.Drawing.Point(271, 24);
+            this.RecupHP.Location = new System.Drawing.Point(238, 24);
             this.RecupHP.Name = "RecupHP";
             this.RecupHP.Size = new System.Drawing.Size(100, 26);
             this.RecupHP.TabIndex = 4;
@@ -330,7 +334,7 @@ namespace BladeOfTheAssassin.Interface {
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(144, 56);
+            this.label8.Location = new System.Drawing.Point(111, 56);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(121, 18);
             this.label8.TabIndex = 3;
@@ -339,7 +343,7 @@ namespace BladeOfTheAssassin.Interface {
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(144, 27);
+            this.label7.Location = new System.Drawing.Point(111, 27);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(121, 18);
             this.label7.TabIndex = 2;
@@ -741,6 +745,26 @@ namespace BladeOfTheAssassin.Interface {
             this.UseKSCB.Text = "Use KillingSpree";
             this.UseKSCB.UseVisualStyleBackColor = true;
             // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.T184PCB);
+            this.groupBox7.Location = new System.Drawing.Point(399, 237);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(157, 88);
+            this.groupBox7.TabIndex = 11;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Sets";
+            // 
+            // T184PCB
+            // 
+            this.T184PCB.AutoSize = true;
+            this.T184PCB.Location = new System.Drawing.Point(15, 30);
+            this.T184PCB.Name = "T184PCB";
+            this.T184PCB.Size = new System.Drawing.Size(118, 22);
+            this.T184PCB.TabIndex = 0;
+            this.T184PCB.Text = "T18 4 Piece Set";
+            this.T184PCB.UseVisualStyleBackColor = true;
+            // 
             // Settings
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -782,6 +806,8 @@ namespace BladeOfTheAssassin.Interface {
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -847,5 +873,7 @@ namespace BladeOfTheAssassin.Interface {
         private CheckBox UseSRCB;
         private CheckBox SDonlyBossCB;
         private CheckBox UseSDCB;
-	}
+        private GroupBox groupBox7;
+        private CheckBox T184PCB;
+    }
 }

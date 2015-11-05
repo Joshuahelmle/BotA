@@ -4,6 +4,7 @@ using Styx.WoWInternals;
 using BladeOfTheAssassin.Core.Conditions.Auras;
 using Styx.WoWInternals.WoWObjects;
 using System.Threading.Tasks;
+using BladeOfTheAssassin.Core.Managers;
 
 namespace BladeOfTheAssassin.Core.Abilities.Combat
 {
@@ -27,13 +28,17 @@ namespace BladeOfTheAssassin.Core.Abilities.Combat
             Conditions.Add(new InMeeleRangeCondition(target));
             Conditions.Add(new BooleanCondition(Me.AuraStacks(SpellBook.AuraAnticipation) <= 1));
            //  t18 bonus! add if you got t18
-            Conditions.Add(new ConditionOrList(
-                new CoolDownLeftMaxCondition(WoWSpell.FromId(SpellBook.AuraShadowDance), System.TimeSpan.FromSeconds(1)),
-                new CoolDownLeftMinCondition(WoWSpell.FromId(SpellBook.AuraShadowDance), System.TimeSpan.FromSeconds(7))));
-            Conditions.Add(new TargetNotAuraUpCondition(Me, WoWSpell.FromId(SpellBook.AuraDeathlyShadows)));
-            /*
-            Conditions.Add(new ImNotStealthedCondition());
-            Conditions.Add(new TargetNotAuraUpCondition(target, WoWSpell.FromId(SpellBook.AuraFindWeakness))); */
+            Conditions.Add(new ConditionSwitchTester(
+                new BooleanCondition(SettingsManager.Instance.T184PEnabled),
+                    new ConditionAndList(
+                         new TargetNotAuraUpCondition(Me, WoWSpell.FromId(SpellBook.AuraDeathlyShadows)),
+                         new ConditionOrList(
+                            new CoolDownLeftMaxCondition(WoWSpell.FromId(SpellBook.AuraShadowDance), System.TimeSpan.FromSeconds(1)),
+                            new CoolDownLeftMinCondition(WoWSpell.FromId(SpellBook.AuraShadowDance), System.TimeSpan.FromSeconds(7)))),
+                new ConditionAndList(
+                    new ImNotStealthedCondition(),
+                    new TargetNotAuraUpCondition(target, WoWSpell.FromId(SpellBook.AuraFindWeakness)))));
+            
             return await base.CastOnTarget(target);
         }
     }

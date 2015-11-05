@@ -103,6 +103,9 @@ namespace BladeOfTheAssassin.Core.Managers
         [Setting, DefaultValue(40)]
         public int FeintPercentage { get; set; }
 
+        [Setting, DefaultValue(true)]
+        public bool T184PEnabled { get; set; }
+
 
         #endregion
 

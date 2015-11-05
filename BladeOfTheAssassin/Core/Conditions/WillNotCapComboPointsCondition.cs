@@ -15,7 +15,11 @@ namespace BladeOfTheAssassin.Core.Conditions
 
         public bool Satisfied()
         {
-            return StyxWoW.Me.HasAura(SpellBook.AuraAnticipation) ? StyxWoW.Me.GetAuraById(SpellBook.AuraAnticipation).StackCount + _generates <= 5 : StyxWoW.Me.ComboPoints + _generates <= 5;
+            if (StyxWoW.Me.KnowsSpell(SpellBook.TalentAnticipation)){
+                return StyxWoW.Me.HasAura(SpellBook.AuraAnticipation) ? StyxWoW.Me.GetAuraById(SpellBook.AuraAnticipation).StackCount + _generates <= 5 : StyxWoW.Me.ComboPoints + _generates <= 10;
+            }
+
+            return StyxWoW.Me.ComboPoints + _generates <= 5;
         }
     }
 }

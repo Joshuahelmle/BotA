@@ -1,5 +1,6 @@
 ﻿using BladeOfTheAssassin.Core.Conditions;
 using BladeOfTheAssassin.Core.Conditions.Auras;
+using BladeOfTheAssassin.Core.Managers;
 using Styx.WoWInternals;
 using Styx.WoWInternals.WoWObjects;
 using System;
@@ -37,7 +38,10 @@ namespace BladeOfTheAssassin.Core.Abilities.Assasination
                         new TargetAuraUpCondition(Me, WoWSpell.FromId(SpellBook.CastEnvenom)),
                         new AuraMaxRemaningTimeCondition(TimeSpan.FromSeconds(1), WoWSpell.FromId(SpellBook.AuraBlindside), Me))
                 )));
-            Conditions.Add(new WillNotCapComboPointsCondition());
+            Conditions.Add(new ConditionSwitchTester(
+                new BooleanCondition(SettingsManager.Instance.T184PEnabled),
+                new WillNotCapComboPointsCondition(3),
+                new WillNotCapComboPointsCondition(1)));
             return await base.CastOnTarget(target);
         }
 

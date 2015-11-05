@@ -59,7 +59,8 @@ namespace BladeOfTheAssassin.Core
             AuraStealth = 115191,
             AuraSubterfuge = 115192,
             AuraShadowDance = 51713,
-        AuraFindWeakness = 91021;
+        AuraFindWeakness = 91021,
+            TalentAnticipation = 114015;
 
 
         #region stuns 
