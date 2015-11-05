@@ -136,7 +136,7 @@ namespace BladeOfTheAssassin.Core.Managers
                     .OrderBy(o => o.Distance)
                     .ToList();
 
-                LastKnownEnemiesInMeeleRange = LastKnownSurroundingEnemies.Where(o => o.IsWithinMeleeRange).ToList();
+                LastKnownEnemiesInMeeleRange = LastKnownSurroundingEnemies.Where(o => o.IsWithinMeleeRange || o.hitBoxDistance() <= 5).ToList();
                 LastKnownNotPoisonedEnemies = LastKnownSurroundingEnemies.Where(o => !o.AuraExists(SpellBook.AuraDeadlyPoison, true)).ToList();
 
                 LastKnownNonBleedingEnemies =
