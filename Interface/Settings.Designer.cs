@@ -90,6 +90,8 @@ namespace BladeOfTheAssassin.Interface {
             this.UseARCB = new System.Windows.Forms.CheckBox();
             this.KSOnlyBossCB = new System.Windows.Forms.CheckBox();
             this.UseKSCB = new System.Windows.Forms.CheckBox();
+            this.UseVendettaCb = new System.Windows.Forms.CheckBox();
+            this.VendettaBossCB = new System.Windows.Forms.CheckBox();
             this.vt.SuspendLayout();
             this.tabAbout.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -103,6 +105,7 @@ namespace BladeOfTheAssassin.Interface {
             this.groupBox1.SuspendLayout();
             this.Buffs.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -664,6 +667,8 @@ namespace BladeOfTheAssassin.Interface {
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.VendettaBossCB);
+            this.groupBox6.Controls.Add(this.UseVendettaCb);
             this.groupBox6.Location = new System.Drawing.Point(551, 169);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(255, 265);
@@ -765,6 +770,26 @@ namespace BladeOfTheAssassin.Interface {
             this.UseKSCB.Text = "Use KillingSpree";
             this.UseKSCB.UseVisualStyleBackColor = true;
             // 
+            // UseVendettaCb
+            // 
+            this.UseVendettaCb.AutoSize = true;
+            this.UseVendettaCb.Location = new System.Drawing.Point(6, 38);
+            this.UseVendettaCb.Name = "UseVendettaCb";
+            this.UseVendettaCb.Size = new System.Drawing.Size(121, 21);
+            this.UseVendettaCb.TabIndex = 0;
+            this.UseVendettaCb.Text = "Use Vendetta";
+            this.UseVendettaCb.UseVisualStyleBackColor = true;
+            // 
+            // VendettaBossCB
+            // 
+            this.VendettaBossCB.AutoSize = true;
+            this.VendettaBossCB.Location = new System.Drawing.Point(27, 67);
+            this.VendettaBossCB.Name = "VendettaBossCB";
+            this.VendettaBossCB.Size = new System.Drawing.Size(119, 21);
+            this.VendettaBossCB.TabIndex = 1;
+            this.VendettaBossCB.Text = "only on Boss";
+            this.VendettaBossCB.UseVisualStyleBackColor = true;
+            // 
             // Settings
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -804,6 +829,8 @@ namespace BladeOfTheAssassin.Interface {
             this.Buffs.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -875,5 +902,7 @@ namespace BladeOfTheAssassin.Interface {
         private GroupBox groupBox7;
         private CheckBox T184PCB;
         private PictureBox pictureBox1;
+        private CheckBox VendettaBossCB;
+        private CheckBox UseVendettaCb;
     }
 }

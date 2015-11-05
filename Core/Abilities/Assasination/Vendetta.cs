@@ -1,13 +1,9 @@
 ﻿using BladeOfTheAssassin.Core.Conditions;
 using BladeOfTheAssassin.Core.Conditions.Auras;
+using BladeOfTheAssassin.Core.Managers;
 using Styx.WoWInternals;
 using Styx.WoWInternals.WoWObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using BladeOfTheAssassin.Core.Managers;
 
 namespace BladeOfTheAssassin.Core.Abilities.Assasination
 {
@@ -25,6 +21,10 @@ namespace BladeOfTheAssassin.Core.Abilities.Assasination
             Conditions.Clear();
             if (MustWaitForGlobalCooldown) Conditions.Add(new IsOffGlobalCooldownCondition());
             if (MustWaitForSpellCooldown) Conditions.Add(new SpellIsNotOnCooldownCondition(Spell));
+            Conditions.Add(new BooleanCondition(SettingsManager.Instance.UseVendetta));
+            Conditions.Add(new ConditionSwitchTester(
+                new BooleanCondition(SettingsManager.Instance.VendettaOnlyOnBoss),
+                new OnlyOnBossCondition()));
             Conditions.Add(new BooleanCondition(target != null));
             Conditions.Add(new InMeeleRangeCondition(target));
             Conditions.Add(new TargetAuraUpCondition(target, WoWSpell.FromId(SpellBook.CastRupture)));

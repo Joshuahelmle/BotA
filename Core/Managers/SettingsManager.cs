@@ -66,6 +66,8 @@ namespace BladeOfTheAssassin.Core.Managers
         [Setting, DefaultValue(false)]
         public bool ShadowReflectionOnlyOnBoss { get; set; }
         [Setting, DefaultValue(false)]
+        public bool UseVendetta { get; set; }
+        [Setting, DefaultValue(false)]
         public bool VendettaOnlyOnBoss { get; set; }
         [Setting, DefaultValue(false)]
         public bool ApplyPoisons { get; set; }

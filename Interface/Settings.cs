@@ -119,6 +119,8 @@ namespace BladeOfTheAssassin.Interface
             ARonlyBossCB.Checked = SMInstance.Instance.AdrenalineRushOnlyOnBoss;
             UseKSCB.Checked = SMInstance.Instance.UseKillingSpree;
             KSOnlyBossCB.Checked = SMInstance.Instance.KillingSpreeOnlyOnBoss;
+            UseVendettaCb.Checked = SMInstance.Instance.UseVendetta;
+            VendettaBossCB.Checked = SMInstance.Instance.VendettaOnlyOnBoss;
 
 
             //Trinkets
@@ -176,6 +178,8 @@ namespace BladeOfTheAssassin.Interface
             SMInstance.Instance.AdrenalineRushOnlyOnBoss = ARonlyBossCB.Checked;
             SMInstance.Instance.UseKillingSpree = UseKSCB.Checked;
             SMInstance.Instance.KillingSpreeOnlyOnBoss = KSOnlyBossCB.Checked;
+            SMInstance.Instance.UseVendetta = UseVendettaCb.Checked;
+            SMInstance.Instance.VendettaOnlyOnBoss = VendettaBossCB.Checked;
 
             //Trinkets
             SMInstance.Instance.UseTrinket1 = Trinket1CB.Checked;
