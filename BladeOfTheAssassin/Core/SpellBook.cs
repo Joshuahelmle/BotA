@@ -44,10 +44,12 @@ namespace BladeOfTheAssassin.Core
             CastStealth = 1784,
             CastVanish = 1856,
             AuraVanish = 115193,
-            
+
             CastVendetta = 79140,
             CastInstantPoison = 157584,
             CastCripplingPoison = 3408,
+            CastWoundPoison = 8679,
+            CastLeechingPoison = 108211,
 
 
 

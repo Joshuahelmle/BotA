@@ -1,5 +1,6 @@
 ﻿using BladeOfTheAssassin.Core.Conditions;
 using BladeOfTheAssassin.Core.Conditions.Auras;
+using BladeOfTheAssassin.Core.Managers;
 using Styx.WoWInternals;
 
 namespace BladeOfTheAssassin.Core.Abilities
@@ -12,7 +13,8 @@ namespace BladeOfTheAssassin.Core.Abilities
         {
             Category = AbilityCategory.Heal;
             Conditions.Add(Energy);
-            Conditions.Add(new TargetIsInHealthRangeCondition(Me, 0, 60));
+            Conditions.Add(new BooleanCondition(SettingsManager.Instance.UseRecup));
+            Conditions.Add(new TargetIsInHealthRangeCondition(Me, 0, SettingsManager.Instance.RecupPercentage));
             Conditions.Add(new ComboPointCondition(3));
             Conditions.Add(new TargetNotAuraUpCondition(Me,Spell));
         }

@@ -34,8 +34,8 @@ namespace BladeOfTheAssassin.Core.Routines
         private static async Task<bool> HealRotation()
         {
            // if (await Abilities.Cast<VanishDefensive>(Me)) return true;
-           // if (await Abilities.Cast<FeintAbility>(Me)) return true;
-           // if (await Abilities.Cast<RecupAbility>(Me)) return true;
+            if (await Abilities.Cast<FeintAbility>(Me)) return true;
+            if (await Abilities.Cast<RecupAbility>(Me)) return true;
             return false;
         }
     }

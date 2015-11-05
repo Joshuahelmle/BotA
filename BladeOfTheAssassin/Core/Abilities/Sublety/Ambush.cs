@@ -1,11 +1,6 @@
 ﻿using BladeOfTheAssassin.Core.Conditions;
-using BladeOfTheAssassin.Core.Conditions.Auras;
 using Styx.WoWInternals;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace BladeOfTheAssassin.Core.Abilities.Sublety
 {
@@ -20,7 +15,7 @@ namespace BladeOfTheAssassin.Core.Abilities.Sublety
         {
             Category = AbilityCategory.Combat;
             Conditions.Add(SDEnergy);
-            Conditions.Add(new WillNotCapComboPointsCondition());
+            Conditions.Add(new WillNotCapComboPointsCondition(2));
             Conditions.Add(new ImStealthedCondition());
         }
     }

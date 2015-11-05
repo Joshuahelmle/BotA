@@ -1,5 +1,6 @@
 ﻿using BladeOfTheAssassin.Core.Conditions;
 using BladeOfTheAssassin.Core.Conditions.Auras;
+using BladeOfTheAssassin.Core.Managers;
 using Styx.WoWInternals;
 
 namespace BladeOfTheAssassin.Core.Abilities.Combat
@@ -12,8 +13,9 @@ namespace BladeOfTheAssassin.Core.Abilities.Combat
         {
             Category = AbilityCategory.Buff;
             Conditions.Add(Energy);
+            Conditions.Add(new BooleanCondition(SettingsManager.Instance.UseFeint));
+            Conditions.Add(new TargetIsInHealthRangeCondition(Me, 0, SettingsManager.Instance.FeintPercentage));
             Conditions.Add(new TargetNotAuraUpCondition(Me, Spell));
-            Conditions.Add(new TargetIsInHealthRangeCondition(Me, 0, 40));
         }
     }
 }

@@ -47,12 +47,12 @@ namespace BladeOfTheAssassin.Interface {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabSettings = new System.Windows.Forms.TabPage();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.RallyingCryHP = new System.Windows.Forms.TextBox();
-            this.DBTSHP = new System.Windows.Forms.TextBox();
+            this.FeintHp = new System.Windows.Forms.TextBox();
+            this.RecupHP = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.RallyingCryCB = new System.Windows.Forms.CheckBox();
-            this.DieByTheSwordCB = new System.Windows.Forms.CheckBox();
+            this.FeintCB = new System.Windows.Forms.CheckBox();
+            this.RecupCB = new System.Windows.Forms.CheckBox();
             this.Racials = new System.Windows.Forms.GroupBox();
             this.RacialBloodElfCB = new System.Windows.Forms.CheckBox();
             this.RacialHumanCB = new System.Windows.Forms.CheckBox();
@@ -71,23 +71,23 @@ namespace BladeOfTheAssassin.Interface {
             this.Trinket1LoCCB = new System.Windows.Forms.CheckBox();
             this.Trinket1CB = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.InterruptPummelCB = new System.Windows.Forms.CheckBox();
+            this.InterruptKickCB = new System.Windows.Forms.CheckBox();
             this.Buffs = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.OHPoisonBox = new System.Windows.Forms.ComboBox();
             this.applyPoisonsCB = new System.Windows.Forms.CheckBox();
-            this.BuffComboBox = new System.Windows.Forms.ComboBox();
+            this.MHPoisonBox = new System.Windows.Forms.ComboBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.SRonlyOnBossCB = new System.Windows.Forms.CheckBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.UseSRCB = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.SDonlyBossCB = new System.Windows.Forms.CheckBox();
+            this.UseSDCB = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.ARonlyBossCB = new System.Windows.Forms.CheckBox();
             this.UseARCB = new System.Windows.Forms.CheckBox();
             this.KSOnlyBossCB = new System.Windows.Forms.CheckBox();
             this.UseKSCB = new System.Windows.Forms.CheckBox();
-            this.UseSDCB = new System.Windows.Forms.CheckBox();
-            this.SDonlyBossCB = new System.Windows.Forms.CheckBox();
-            this.UseSRCB = new System.Windows.Forms.CheckBox();
-            this.SRonlyOnBossCB = new System.Windows.Forms.CheckBox();
             this.vt.SuspendLayout();
             this.tabAbout.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -300,12 +300,12 @@ namespace BladeOfTheAssassin.Interface {
             // 
             // groupBox10
             // 
-            this.groupBox10.Controls.Add(this.RallyingCryHP);
-            this.groupBox10.Controls.Add(this.DBTSHP);
+            this.groupBox10.Controls.Add(this.FeintHp);
+            this.groupBox10.Controls.Add(this.RecupHP);
             this.groupBox10.Controls.Add(this.label8);
             this.groupBox10.Controls.Add(this.label7);
-            this.groupBox10.Controls.Add(this.RallyingCryCB);
-            this.groupBox10.Controls.Add(this.DieByTheSwordCB);
+            this.groupBox10.Controls.Add(this.FeintCB);
+            this.groupBox10.Controls.Add(this.RecupCB);
             this.groupBox10.Location = new System.Drawing.Point(13, 237);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(415, 88);
@@ -313,19 +313,19 @@ namespace BladeOfTheAssassin.Interface {
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Defensives";
             // 
-            // RallyingCryHP
+            // FeintHp
             // 
-            this.RallyingCryHP.Location = new System.Drawing.Point(271, 53);
-            this.RallyingCryHP.Name = "RallyingCryHP";
-            this.RallyingCryHP.Size = new System.Drawing.Size(100, 26);
-            this.RallyingCryHP.TabIndex = 5;
+            this.FeintHp.Location = new System.Drawing.Point(271, 53);
+            this.FeintHp.Name = "FeintHp";
+            this.FeintHp.Size = new System.Drawing.Size(100, 26);
+            this.FeintHp.TabIndex = 5;
             // 
-            // DBTSHP
+            // RecupHP
             // 
-            this.DBTSHP.Location = new System.Drawing.Point(271, 24);
-            this.DBTSHP.Name = "DBTSHP";
-            this.DBTSHP.Size = new System.Drawing.Size(100, 26);
-            this.DBTSHP.TabIndex = 4;
+            this.RecupHP.Location = new System.Drawing.Point(271, 24);
+            this.RecupHP.Name = "RecupHP";
+            this.RecupHP.Size = new System.Drawing.Size(100, 26);
+            this.RecupHP.TabIndex = 4;
             // 
             // label8
             // 
@@ -345,25 +345,25 @@ namespace BladeOfTheAssassin.Interface {
             this.label7.TabIndex = 2;
             this.label7.Text = "on HP percentage:";
             // 
-            // RallyingCryCB
+            // FeintCB
             // 
-            this.RallyingCryCB.AutoSize = true;
-            this.RallyingCryCB.Location = new System.Drawing.Point(7, 55);
-            this.RallyingCryCB.Name = "RallyingCryCB";
-            this.RallyingCryCB.Size = new System.Drawing.Size(59, 22);
-            this.RallyingCryCB.TabIndex = 1;
-            this.RallyingCryCB.Text = "Feint";
-            this.RallyingCryCB.UseVisualStyleBackColor = true;
+            this.FeintCB.AutoSize = true;
+            this.FeintCB.Location = new System.Drawing.Point(7, 55);
+            this.FeintCB.Name = "FeintCB";
+            this.FeintCB.Size = new System.Drawing.Size(59, 22);
+            this.FeintCB.TabIndex = 1;
+            this.FeintCB.Text = "Feint";
+            this.FeintCB.UseVisualStyleBackColor = true;
             // 
-            // DieByTheSwordCB
+            // RecupCB
             // 
-            this.DieByTheSwordCB.AutoSize = true;
-            this.DieByTheSwordCB.Location = new System.Drawing.Point(7, 26);
-            this.DieByTheSwordCB.Name = "DieByTheSwordCB";
-            this.DieByTheSwordCB.Size = new System.Drawing.Size(98, 22);
-            this.DieByTheSwordCB.TabIndex = 0;
-            this.DieByTheSwordCB.Text = "Recuperate";
-            this.DieByTheSwordCB.UseVisualStyleBackColor = true;
+            this.RecupCB.AutoSize = true;
+            this.RecupCB.Location = new System.Drawing.Point(7, 26);
+            this.RecupCB.Name = "RecupCB";
+            this.RecupCB.Size = new System.Drawing.Size(98, 22);
+            this.RecupCB.TabIndex = 0;
+            this.RecupCB.Text = "Recuperate";
+            this.RecupCB.UseVisualStyleBackColor = true;
             // 
             // Racials
             // 
@@ -543,7 +543,7 @@ namespace BladeOfTheAssassin.Interface {
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.InterruptPummelCB);
+            this.groupBox1.Controls.Add(this.InterruptKickCB);
             this.groupBox1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(6, 130);
             this.groupBox1.Name = "groupBox1";
@@ -552,21 +552,21 @@ namespace BladeOfTheAssassin.Interface {
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Interrupts";
             // 
-            // InterruptPummelCB
+            // InterruptKickCB
             // 
-            this.InterruptPummelCB.AutoSize = true;
-            this.InterruptPummelCB.Location = new System.Drawing.Point(6, 24);
-            this.InterruptPummelCB.Name = "InterruptPummelCB";
-            this.InterruptPummelCB.Size = new System.Drawing.Size(52, 22);
-            this.InterruptPummelCB.TabIndex = 0;
-            this.InterruptPummelCB.Text = "Kick";
-            this.InterruptPummelCB.UseVisualStyleBackColor = true;
+            this.InterruptKickCB.AutoSize = true;
+            this.InterruptKickCB.Location = new System.Drawing.Point(6, 24);
+            this.InterruptKickCB.Name = "InterruptKickCB";
+            this.InterruptKickCB.Size = new System.Drawing.Size(52, 22);
+            this.InterruptKickCB.TabIndex = 0;
+            this.InterruptKickCB.Text = "Kick";
+            this.InterruptKickCB.UseVisualStyleBackColor = true;
             // 
             // Buffs
             // 
-            this.Buffs.Controls.Add(this.comboBox1);
+            this.Buffs.Controls.Add(this.OHPoisonBox);
             this.Buffs.Controls.Add(this.applyPoisonsCB);
-            this.Buffs.Controls.Add(this.BuffComboBox);
+            this.Buffs.Controls.Add(this.MHPoisonBox);
             this.Buffs.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Buffs.Location = new System.Drawing.Point(6, 6);
             this.Buffs.Name = "Buffs";
@@ -575,18 +575,18 @@ namespace BladeOfTheAssassin.Interface {
             this.Buffs.TabStop = false;
             this.Buffs.Text = "Buffs";
             // 
-            // comboBox1
+            // OHPoisonBox
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.Silver;
-            this.comboBox1.ForeColor = System.Drawing.Color.Black;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Battle Shout",
-            "Commanding Shout"});
-            this.comboBox1.Location = new System.Drawing.Point(6, 80);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(153, 26);
-            this.comboBox1.TabIndex = 2;
+            this.OHPoisonBox.BackColor = System.Drawing.Color.Silver;
+            this.OHPoisonBox.ForeColor = System.Drawing.Color.Black;
+            this.OHPoisonBox.FormattingEnabled = true;
+            this.OHPoisonBox.Items.AddRange(new object[] {
+            "Crippling Poison",
+            "Leeching Poison"});
+            this.OHPoisonBox.Location = new System.Drawing.Point(6, 80);
+            this.OHPoisonBox.Name = "OHPoisonBox";
+            this.OHPoisonBox.Size = new System.Drawing.Size(153, 26);
+            this.OHPoisonBox.TabIndex = 2;
             // 
             // applyPoisonsCB
             // 
@@ -600,18 +600,18 @@ namespace BladeOfTheAssassin.Interface {
             this.applyPoisonsCB.Text = "Apply Poisons";
             this.applyPoisonsCB.UseVisualStyleBackColor = true;
             // 
-            // BuffComboBox
+            // MHPoisonBox
             // 
-            this.BuffComboBox.BackColor = System.Drawing.Color.Silver;
-            this.BuffComboBox.ForeColor = System.Drawing.Color.Black;
-            this.BuffComboBox.FormattingEnabled = true;
-            this.BuffComboBox.Items.AddRange(new object[] {
-            "Battle Shout",
-            "Commanding Shout"});
-            this.BuffComboBox.Location = new System.Drawing.Point(6, 48);
-            this.BuffComboBox.Name = "BuffComboBox";
-            this.BuffComboBox.Size = new System.Drawing.Size(153, 26);
-            this.BuffComboBox.TabIndex = 0;
+            this.MHPoisonBox.BackColor = System.Drawing.Color.Silver;
+            this.MHPoisonBox.ForeColor = System.Drawing.Color.Black;
+            this.MHPoisonBox.FormattingEnabled = true;
+            this.MHPoisonBox.Items.AddRange(new object[] {
+            "Deadly Poison",
+            "Wound Poison"});
+            this.MHPoisonBox.Location = new System.Drawing.Point(6, 48);
+            this.MHPoisonBox.Name = "MHPoisonBox";
+            this.MHPoisonBox.Size = new System.Drawing.Size(153, 26);
+            this.MHPoisonBox.TabIndex = 0;
             // 
             // tabPage1
             // 
@@ -628,6 +628,16 @@ namespace BladeOfTheAssassin.Interface {
             this.tabPage1.TabIndex = 3;
             this.tabPage1.Text = "Talents";
             // 
+            // SRonlyOnBossCB
+            // 
+            this.SRonlyOnBossCB.AutoSize = true;
+            this.SRonlyOnBossCB.Location = new System.Drawing.Point(52, 45);
+            this.SRonlyOnBossCB.Name = "SRonlyOnBossCB";
+            this.SRonlyOnBossCB.Size = new System.Drawing.Size(111, 21);
+            this.SRonlyOnBossCB.TabIndex = 3;
+            this.SRonlyOnBossCB.Text = "onlyOnBoss";
+            this.SRonlyOnBossCB.UseVisualStyleBackColor = true;
+            // 
             // groupBox6
             // 
             this.groupBox6.Location = new System.Drawing.Point(551, 169);
@@ -636,6 +646,16 @@ namespace BladeOfTheAssassin.Interface {
             this.groupBox6.TabIndex = 2;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Assasination";
+            // 
+            // UseSRCB
+            // 
+            this.UseSRCB.AutoSize = true;
+            this.UseSRCB.Location = new System.Drawing.Point(36, 18);
+            this.UseSRCB.Name = "UseSRCB";
+            this.UseSRCB.Size = new System.Drawing.Size(182, 21);
+            this.UseSRCB.TabIndex = 2;
+            this.UseSRCB.Text = "Use ShadowReflection";
+            this.UseSRCB.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
@@ -647,6 +667,26 @@ namespace BladeOfTheAssassin.Interface {
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Subtlety";
+            // 
+            // SDonlyBossCB
+            // 
+            this.SDonlyBossCB.AutoSize = true;
+            this.SDonlyBossCB.Location = new System.Drawing.Point(38, 66);
+            this.SDonlyBossCB.Name = "SDonlyBossCB";
+            this.SDonlyBossCB.Size = new System.Drawing.Size(119, 21);
+            this.SDonlyBossCB.TabIndex = 1;
+            this.SDonlyBossCB.Text = "only on Boss";
+            this.SDonlyBossCB.UseVisualStyleBackColor = true;
+            // 
+            // UseSDCB
+            // 
+            this.UseSDCB.AutoSize = true;
+            this.UseSDCB.Location = new System.Drawing.Point(23, 38);
+            this.UseSDCB.Name = "UseSDCB";
+            this.UseSDCB.Size = new System.Drawing.Size(157, 21);
+            this.UseSDCB.TabIndex = 0;
+            this.UseSDCB.Text = "Use ShadowDance";
+            this.UseSDCB.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -700,46 +740,6 @@ namespace BladeOfTheAssassin.Interface {
             this.UseKSCB.TabIndex = 0;
             this.UseKSCB.Text = "Use KillingSpree";
             this.UseKSCB.UseVisualStyleBackColor = true;
-            // 
-            // UseSDCB
-            // 
-            this.UseSDCB.AutoSize = true;
-            this.UseSDCB.Location = new System.Drawing.Point(23, 38);
-            this.UseSDCB.Name = "UseSDCB";
-            this.UseSDCB.Size = new System.Drawing.Size(157, 21);
-            this.UseSDCB.TabIndex = 0;
-            this.UseSDCB.Text = "Use ShadowDance";
-            this.UseSDCB.UseVisualStyleBackColor = true;
-            // 
-            // SDonlyBossCB
-            // 
-            this.SDonlyBossCB.AutoSize = true;
-            this.SDonlyBossCB.Location = new System.Drawing.Point(38, 66);
-            this.SDonlyBossCB.Name = "SDonlyBossCB";
-            this.SDonlyBossCB.Size = new System.Drawing.Size(119, 21);
-            this.SDonlyBossCB.TabIndex = 1;
-            this.SDonlyBossCB.Text = "only on Boss";
-            this.SDonlyBossCB.UseVisualStyleBackColor = true;
-            // 
-            // UseSRCB
-            // 
-            this.UseSRCB.AutoSize = true;
-            this.UseSRCB.Location = new System.Drawing.Point(36, 18);
-            this.UseSRCB.Name = "UseSRCB";
-            this.UseSRCB.Size = new System.Drawing.Size(182, 21);
-            this.UseSRCB.TabIndex = 2;
-            this.UseSRCB.Text = "Use ShadowReflection";
-            this.UseSRCB.UseVisualStyleBackColor = true;
-            // 
-            // SRonlyOnBossCB
-            // 
-            this.SRonlyOnBossCB.AutoSize = true;
-            this.SRonlyOnBossCB.Location = new System.Drawing.Point(52, 45);
-            this.SRonlyOnBossCB.Name = "SRonlyOnBossCB";
-            this.SRonlyOnBossCB.Size = new System.Drawing.Size(111, 21);
-            this.SRonlyOnBossCB.TabIndex = 3;
-            this.SRonlyOnBossCB.Text = "onlyOnBoss";
-            this.SRonlyOnBossCB.UseVisualStyleBackColor = true;
             // 
             // Settings
             // 
@@ -797,10 +797,10 @@ namespace BladeOfTheAssassin.Interface {
         private TabPage tabAbout;
         private VerticalTabs vt;
         private GroupBox groupBox1;
-        private CheckBox InterruptPummelCB;
+        private CheckBox InterruptKickCB;
         private GroupBox Buffs;
         private CheckBox applyPoisonsCB;
-        private ComboBox BuffComboBox;
+        private ComboBox MHPoisonBox;
         private PictureBox pictureBox1;
         private Label label3;
         private TableLayoutPanel tableLayoutPanel1;
@@ -829,13 +829,13 @@ namespace BladeOfTheAssassin.Interface {
         private CheckBox RacialOrcCB;
         private TabPage tabPage1;
         private GroupBox groupBox10;
-        private TextBox RallyingCryHP;
-        private TextBox DBTSHP;
+        private TextBox FeintHp;
+        private TextBox RecupHP;
         private Label label8;
         private Label label7;
-        private CheckBox RallyingCryCB;
-        private CheckBox DieByTheSwordCB;
-        private ComboBox comboBox1;
+        private CheckBox FeintCB;
+        private CheckBox RecupCB;
+        private ComboBox OHPoisonBox;
         private GroupBox groupBox3;
         private GroupBox groupBox2;
         private GroupBox groupBox6;

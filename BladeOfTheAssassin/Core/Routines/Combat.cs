@@ -1,6 +1,4 @@
-﻿//using Arms = InnerRage.Core.Abilities.Arms;
-
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using BladeOfTheAssassin.Core.Abilities.Combat;
 using BladeOfTheAssassin.Core.Managers;

@@ -217,6 +217,7 @@ namespace BladeOfTheAssassin.Core.Managers
             Abilities.Add(new KickAbility());
             Abilities.Add(new KidneyShotAbility());
             Abilities.Add(new KillingSpree());
+            Abilities.Add(new LeechingPoison());
             Abilities.Add(new MarkedForDeathAbility());
             Abilities.Add(new Mutilate());
             Abilities.Add(new Premed());
@@ -234,6 +235,7 @@ namespace BladeOfTheAssassin.Core.Managers
             Abilities.Add(new VanishDefensive());
             Abilities.Add(new VanishOffensive());
             Abilities.Add(new Vendetta());
+            Abilities.Add(new WoundPoison());
             Abilities.Add(new RacialHumanAbility());
             Abilities.Add(new RacialOrcBloodFuryAbility());
             Abilities.Add(new RacialsBloodElfAbility());

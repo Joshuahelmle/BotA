@@ -69,8 +69,11 @@ namespace BladeOfTheAssassin.Core.Managers
         public bool VendettaOnlyOnBoss { get; set; }
         [Setting, DefaultValue(false)]
         public bool ApplyPoisons { get; set; }
+        [Setting, DefaultValue(false)]
+        public bool UseDeadlyPoison { get; set; }
+        [Setting, DefaultValue(false)]
+        public bool UseCripplingPoison { get; set; }
 
-       
         [Setting, DefaultValue(false)]
         public bool UseOrcRacial { get; set; }
 
@@ -87,10 +90,19 @@ namespace BladeOfTheAssassin.Core.Managers
 
         [Setting, DefaultValue(300)]
         public int InterruptDelay { get; set; }
+        [Setting, DefaultValue(false)]
+        public bool InterruptKick { get; set; }
 
-        //Buffs
-     
-       
+        //Defensive
+        [Setting, DefaultValue(false)]
+        public bool UseRecup { get; set; }
+        [Setting, DefaultValue(false)]
+        public bool UseFeint { get; set; }
+        [Setting, DefaultValue(60)]
+        public int RecupPercentage { get; set; }
+        [Setting, DefaultValue(40)]
+        public int FeintPercentage { get; set; }
+
 
         #endregion
 

@@ -31,7 +31,7 @@ namespace BladeOfTheAssassin.Core.Abilities.Sublety
             Conditions.Add(new InMeeleRangeCondition(target));
             Conditions.Add(Energy);
             Conditions.Add(new BooleanCondition(Me.IsBehindOrSide(target)));
-            Conditions.Add(new WillNotCapComboPointsCondition());
+            Conditions.Add(new WillNotCapComboPointsCondition(1));
             Conditions.Add(new ImNotStealthedCondition());
             Conditions.Add(new TargetNotAuraUpCondition(Me, WoWSpell.FromId(SpellBook.AuraVanish)));
             return await base.CastOnTarget(target);

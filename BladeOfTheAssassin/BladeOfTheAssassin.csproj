@@ -32,10 +32,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GreyMagic">
-      <HintPath>..\..\..\..\..\..\..\HB Fresh\GreyMagic.dll</HintPath>
+      <HintPath>..\..\..\..\Documents\HB Fresh\GreyMagic.dll</HintPath>
     </Reference>
     <Reference Include="Honorbuddy">
-      <HintPath>..\..\..\..\..\..\..\HB Fresh\Honorbuddy.exe</HintPath>
+      <HintPath>..\..\..\..\Documents\HB Fresh\Honorbuddy.exe</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -50,7 +50,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Tripper.Tools">
-      <HintPath>..\..\..\..\..\..\..\HB Fresh\Tripper.Tools.dll</HintPath>
+      <HintPath>..\..\..\..\Documents\HB Fresh\Tripper.Tools.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>
@@ -88,6 +88,7 @@
     <Compile Include="Core\Abilities\IAbility.cs" />
     <Compile Include="Core\Abilities\Combat\RecupAbility.cs" />
     <Compile Include="Core\Abilities\Shared\FanOfKnives.cs" />
+    <Compile Include="Core\Abilities\Shared\LeechingPoison.cs" />
     <Compile Include="Core\Abilities\Shared\Preperation.cs" />
     <Compile Include="Core\Abilities\Shared\Racials\RacialHumanAbility.cs" />
     <Compile Include="Core\Abilities\Shared\Racials\RacialOrcBloodFuryAbility.cs" />
@@ -96,6 +97,7 @@
     <Compile Include="Core\Abilities\Shared\RefreshRupture.cs" />
     <Compile Include="Core\Abilities\Shared\Rupture.cs" />
     <Compile Include="Core\Abilities\Shared\ShadowReflection.cs" />
+    <Compile Include="Core\Abilities\Shared\WoundPoison.cs" />
     <Compile Include="Core\Abilities\Sublety\Ambush.cs" />
     <Compile Include="Core\Abilities\Shared\CloakOfShadowsAbility.cs" />
     <Compile Include="Core\Abilities\Shared\CripplingPoison.cs" />

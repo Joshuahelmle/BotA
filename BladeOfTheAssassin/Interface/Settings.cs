@@ -107,6 +107,8 @@ namespace BladeOfTheAssassin.Interface
 
             //Poisons
             applyPoisonsCB.Checked = SMInstance.Instance.ApplyPoisons;
+            MHPoisonBox.SelectedIndex = SMInstance.Instance.UseDeadlyPoison ? 0 : 1;
+            OHPoisonBox.SelectedIndex = SMInstance.Instance.UseCripplingPoison ? 0 :1;
 
             //Cooldowns
             UseSRCB.Checked = SMInstance.Instance.UseShadowReflection;
@@ -140,102 +142,15 @@ namespace BladeOfTheAssassin.Interface
             InterruptDelay.Text = SMInstance.Instance.InterruptDelay.ToString();
             LoCDelay.Text = SMInstance.Instance.LoCDelay.ToString();
 
-            /*
-            //Buffs
-            checkBuffs.Checked = SMInstance.Instance.BuffEnabled;
-            BuffComboBox.SelectedIndex = SMInstance.Instance.BuffCommandingShout ? 1 : 0;
-
             //Interrupts
-            InterruptPummelCB.Checked = SMInstance.Instance.InterruptPummel;
-            InterruptShockWaveCB.Checked = SMInstance.Instance.InterruptShockWave;
-            InterruptStormBoltCB.Checked = SMInstance.Instance.InterruptStormBolt;
+            InterruptKickCB.Checked = SMInstance.Instance.InterruptKick;
 
-            //Talents
-            TalentAvatarCB.Checked = SMInstance.Instance.TalentAvatar;
-            TalentsBloodBathCB.Checked = SMInstance.Instance.TalentBloodBath;
-            TalentBladeStormCB.Checked = SMInstance.Instance.TalentBladeStorm;
-            TalentDragonRoarCB.Checked = SMInstance.Instance.TalentDragonRoar;
-            TalentShockWaveCB.Checked = SMInstance.Instance.TalentShockWave;
-            TalentStormBoltCB.Checked = SMInstance.Instance.TalentStormBolt;
-            TalentRavagerCB.Checked = SMInstance.Instance.TalentRavager;
+            //Defensives
+            RecupCB.Checked = SMInstance.Instance.UseRecup;
+            FeintCB.Checked = SMInstance.Instance.UseFeint;
+            RecupHP.Text = SMInstance.Instance.RecupPercentage.ToString();
+            FeintHp.Text = SMInstance.Instance.FeintPercentage.ToString();
 
-
-            TalentsBloodBathCondition.SelectedIndex = SMInstance.Instance.TalentBloodbathAlways ? 0 : 1;
-            if (SMInstance.Instance.TalentRecklessnessAlways)
-                TalentsRecklessnessCondition.SelectedIndex = 0;
-            else if (SMInstance.Instance.TalentRecklessnessOnBloodBath)
-                TalentsRecklessnessCondition.SelectedIndex = 1;
-            else TalentsRecklessnessCondition.SelectedIndex = 2;
-            TalentSyncAvatar.Checked = SMInstance.Instance.TalentSyncAvatar;
-            TalentSyncDragonRoar.Checked = SMInstance.Instance.TalentSyncDragonRoar;
-
-            TalentSyncRavager.Checked = SMInstance.Instance.TalentSyncRavager;
-            TrinketAura.Text = Convert.ToString(SMInstance.Instance.TrinketProccAura);
-            RecklessnessOnlyOnBossCB.Checked = SMInstance.Instance.RecklessOnlyOnBoss;
-
-
-            //Trinkets
-            Trinket1CB.Checked = SMInstance.Instance.UseTrinket1;
-            Trinket1LoCCB.Checked = SMInstance.Instance.UseTrinket1OnLoC;
-            Trinket2BurstCb.Checked = SMInstance.Instance.UseTrinket1ToBurst;
-
-            Trinket2CB.Checked = SMInstance.Instance.UseTrinket2;
-            Trinket2LoCCB.Checked = SMInstance.Instance.UseTrinket2OnLoC;
-            Trinket2BurstCb.Checked = SMInstance.Instance.UseTrinket2ToBurst;
-
-            //Racials
-
-            RacialOrcCB.Checked = SMInstance.Instance.UseOrcRacial;
-            RacialOrcCB.Checked = SMInstance.Instance.UseTrollRacial;
-            RacialHumanCB.Checked = SMInstance.Instance.UseHumanRacial;
-            RacialBloodElfCB.Checked = SMInstance.Instance.UseBloodElfRacial;
-
-            //Timer
-
-            InterruptDelay.Text = SMInstance.Instance.InterruptDelay.ToString();
-            LoCDelay.Text = SMInstance.Instance.LoCDelay.ToString();
-
-
-            //Talents - Advanced
-            BladestormOnlyBossCB.Checked = SMInstance.Instance.BladestormOnlyOnBoss;
-            BladestormOnlyAoECountCB.Checked = SMInstance.Instance.BladestormOnlyOnAoECount;
-            BladestormAoECount.Text = SMInstance.Instance.BladestormAoeCount.ToString();
-
-            RavagerOnlyBossCB.Checked = SMInstance.Instance.RavagerOnlyOnBoss;
-            RavagerOnlyAoECountCB.Checked = SMInstance.Instance.RavagerOnlyOnAoECount;
-            RavagerAoeCount.Text = SMInstance.Instance.RavagerAoeCount.ToString();
-
-            DragonRoarOnlyOnBossCB.Checked = SMInstance.Instance.DragonRoarOnlyOnBoss;
-            DragonRoarAoECountCB.Checked = SMInstance.Instance.DragonRoarOnlyOnAoECount;
-            DragonRoarAoECount.Text = SMInstance.Instance.DragonRoarAoeCount.ToString();
-
-            BerserkerBreakFearCB.Checked = SMInstance.Instance.UseBerserkerBreakFear;
-
-            EnragedRegenerationCB.Checked = SMInstance.Instance.UseEnragedRegeneration;
-            RallyingCryCB.Checked = SMInstance.Instance.UseRallyingCry;
-            RallyingCryHP.Text = SMInstance.Instance.RallyingCryHP.ToString();
-            DieByTheSwordCB.Checked = SMInstance.Instance.UseDieByTheSword;
-            DBTSHP.Text = SMInstance.Instance.UseDieByTheSwordHP.ToString();
-            UseLastStandCB.Checked = SMInstance.Instance.UseLastStand;
-            UseLastStandHP.Text = SMInstance.Instance.UseLastStandHP.ToString();
-            UseShieldWallCB.Checked = SMInstance.Instance.UseShieldWall;
-            UseShieldWallHP.Text = SMInstance.Instance.UseShieldWallHP.ToString(); 
-
-            if (Main.Debug)
-            {
-                Log.Diagnostics("You are in InitSettings:");
-                Log.Diagnostics(" SMInstance.Instance.BuffEnabled: " + SMInstance.Instance.BuffEnabled);
-                Log.Diagnostics(String.Format(" SMInstance.Instance.DieByTheSword : {0} , on {1} HP",
-                    SMInstance.Instance.UseDieByTheSword,
-                    SMInstance.Instance.UseDieByTheSwordHP));
-                Log.Diagnostics(String.Format("SMInstance.Instance.Bladestorm only on AoECount : {0} , on {1} Targets",
-                    SMInstance.Instance.BladestormOnlyOnAoECount,
-                    SMInstance.Instance.BladestormAoeCount));
-                Log.Diagnostics(String.Format("SMInstance.Instance.Bladestorm only on Boss : {0}",
-                    SMInstance.Instance.BladestormOnlyOnBoss
-                    ));
-            }
-             */
         }
 
         /// <summary>
@@ -247,7 +162,8 @@ namespace BladeOfTheAssassin.Interface
         {
             //Poisons
             SMInstance.Instance.ApplyPoisons = applyPoisonsCB.Checked;
-
+            SMInstance.Instance.UseDeadlyPoison = MHPoisonBox.SelectedIndex == 0;
+            SMInstance.Instance.UseCripplingPoison = OHPoisonBox.SelectedIndex == 0;
             //Cooldowns
             SMInstance.Instance.UseShadowReflection = UseSRCB.Checked;
             SMInstance.Instance.ShadowReflectionOnlyOnBoss = SRonlyOnBossCB.Checked;
@@ -279,101 +195,16 @@ namespace BladeOfTheAssassin.Interface
 
             SMInstance.Instance.InterruptDelay = Convert.ToInt32(InterruptDelay.Text);
             SMInstance.Instance.LoCDelay = Convert.ToInt32(LoCDelay.Text);
-            /*
-            SMInstance.Instance.BuffEnabled = checkBuffs.Checked;
-            SMInstance.Instance.BuffBattleshout = BuffComboBox.SelectedIndex == 0;
-            SMInstance.Instance.BuffCommandingShout = BuffComboBox.SelectedIndex == 1;
 
             //Interrupts
-            SMInstance.Instance.InterruptPummel = InterruptPummelCB.Checked;
+            SMInstance.Instance.InterruptKick = InterruptKickCB.Checked;
 
-            SMInstance.Instance.InterruptStormBolt = InterruptStormBoltCB.Checked;
-            SMInstance.Instance.InterruptShockWave = InterruptShockWaveCB.Checked;
+            //Defensives
+            SMInstance.Instance.UseRecup = RecupCB.Checked;
+            SMInstance.Instance.UseFeint = FeintCB.Checked;
+            SMInstance.Instance.RecupPercentage = Convert.ToInt32(RecupHP.Text);
+            SMInstance.Instance.FeintPercentage = Convert.ToInt32(FeintHp.Text);
 
-            //Talents
-            SMInstance.Instance.TalentAvatar = TalentAvatarCB.Checked;
-
-            SMInstance.Instance.TalentBloodBath = TalentsBloodBathCB.Checked;
-            SMInstance.Instance.TalentBladeStorm = TalentBladeStormCB.Checked;
-            SMInstance.Instance.TalentDragonRoar = TalentDragonRoarCB.Checked;
-            SMInstance.Instance.TalentShockWave = TalentShockWaveCB.Checked;
-            SMInstance.Instance.TalentStormBolt = TalentStormBoltCB.Checked;
-            SMInstance.Instance.TalentRavager = TalentRavagerCB.Checked;
-
-            SMInstance.Instance.TalentBloodbathAlways = TalentsBloodBathCondition.SelectedIndex == 0;
-            SMInstance.Instance.TalentBloodbathOnTrinket = TalentsBloodBathCondition.SelectedIndex == 1;
-            SMInstance.Instance.TalentRecklessnessAlways = TalentsRecklessnessCondition.SelectedIndex == 0;
-            SMInstance.Instance.TalentRecklessnessOnBloodBath = TalentsRecklessnessCondition.SelectedIndex == 1;
-            SMInstance.Instance.TalentRecklessnessNever = TalentsRecklessnessCondition.SelectedIndex == 2;
-
-            SMInstance.Instance.TalentSyncAvatar = TalentSyncAvatar.Checked;
-            SMInstance.Instance.TalentSyncDragonRoar = TalentSyncDragonRoar.Checked;
-
-            SMInstance.Instance.TalentSyncRavager = TalentSyncRavager.Checked;
-
-            SMInstance.Instance.TrinketProccAura = Convert.ToInt32(TrinketAura.Text);
-
-            SMInstance.Instance.RecklessOnlyOnBoss = RecklessnessOnlyOnBossCB.Checked;
-
-
-            //Trinkets
-            SMInstance.Instance.UseTrinket1 = Trinket1CB.Checked;
-            SMInstance.Instance.UseTrinket1OnLoC = Trinket1LoCCB.Checked;
-            SMInstance.Instance.UseTrinket1ToBurst = Trinket2BurstCb.Checked;
-
-            SMInstance.Instance.UseTrinket2 = Trinket2CB.Checked;
-            SMInstance.Instance.UseTrinket2OnLoC = Trinket2LoCCB.Checked;
-            SMInstance.Instance.UseTrinket2ToBurst = Trinket2BurstCb.Checked;
-
-            //Racials
-
-            SMInstance.Instance.UseOrcRacial = RacialOrcCB.Checked;
-            SMInstance.Instance.UseTrollRacial = RacialOrcCB.Checked;
-            SMInstance.Instance.UseHumanRacial = RacialHumanCB.Checked;
-            SMInstance.Instance.UseBloodElfRacial = RacialBloodElfCB.Checked;
-
-
-            //Timer
-
-            SMInstance.Instance.InterruptDelay = Convert.ToInt32(InterruptDelay.Text);
-            SMInstance.Instance.LoCDelay = Convert.ToInt32(LoCDelay.Text);
-
-
-            //Talents - Advanced
-            SMInstance.Instance.BladestormOnlyOnBoss = BladestormOnlyBossCB.Checked;
-            SMInstance.Instance.BladestormOnlyOnAoECount = BladestormOnlyAoECountCB.Checked;
-            SMInstance.Instance.BladestormAoeCount = Convert.ToInt32(BladestormAoECount.Text);
-
-            SMInstance.Instance.RavagerOnlyOnBoss = RavagerOnlyBossCB.Checked;
-            SMInstance.Instance.RavagerOnlyOnAoECount = RavagerOnlyAoECountCB.Checked;
-            SMInstance.Instance.RavagerAoeCount = Convert.ToInt32(RavagerAoeCount.Text);
-
-            SMInstance.Instance.DragonRoarOnlyOnBoss = DragonRoarOnlyOnBossCB.Checked;
-            SMInstance.Instance.DragonRoarOnlyOnAoECount = DragonRoarAoECountCB.Checked;
-            SMInstance.Instance.DragonRoarAoeCount = Convert.ToInt32(DragonRoarAoECount.Text);
-
-            SMInstance.Instance.UseBerserkerBreakFear = BerserkerBreakFearCB.Checked;
-            SMInstance.Instance.UseEnragedRegeneration = EnragedRegenerationCB.Checked;
-            SMInstance.Instance.UseRallyingCry = RallyingCryCB.Checked;
-            SMInstance.Instance.RallyingCryHP = Convert.ToInt32(RallyingCryHP.Text);
-            SMInstance.Instance.UseDieByTheSword = DieByTheSwordCB.Checked;
-            SMInstance.Instance.UseDieByTheSwordHP = Convert.ToInt32(DBTSHP.Text);
-
-            SMInstance.Instance.UseLastStand = UseLastStandCB.Checked;
-            SMInstance.Instance.UseLastStandHP = Convert.ToInt32(UseLastStandHP.Text);
-            SMInstance.Instance.UseShieldWall = UseShieldWallCB.Checked;
-            SMInstance.Instance.UseShieldWallHP = Convert.ToInt32(UseShieldWallHP.Text);
-
-
-            if (Main.Debug) // debug
-            {
-                Log.Diagnostics("You are in CommitSettings:");
-                Log.Diagnostics(" SMInstance.Instance.BuffEnabled: " + SMInstance.Instance.BuffEnabled);
-                Log.Diagnostics(String.Format(" SMInstance.Instance.DieByTheSword : {0} , on {1} HP",
-                    SMInstance.Instance.UseDieByTheSword,
-                    SMInstance.Instance.UseDieByTheSwordHP));
-            }
-             */
         }
 
         #endregion
