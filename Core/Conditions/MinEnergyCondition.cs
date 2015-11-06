@@ -13,7 +13,7 @@ namespace BladeOfTheAssassin.Core.Conditions
 
         public bool Satisfied()
         {
-            return StyxWoW.Me.CurrentRage > _minEnergy;
+            return StyxWoW.Me.CurrentRage >= _minEnergy;
         }
     }
 }

@@ -27,7 +27,7 @@ namespace BladeOfTheAssassin.Core.Conditions
         public bool Satisfied()
         {
             if (Main.Debug)Log.Diagnostics("CooldownTimeleft of: "+Spell+ " is :"+Spell.CooldownTimeLeft);
-            return Spell.CooldownTimeLeft < MaxTimeLeft;
+            return Spell.CooldownTimeLeft <= MaxTimeLeft;
         }
     }
 }

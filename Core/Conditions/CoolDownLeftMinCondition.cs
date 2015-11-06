@@ -16,7 +16,7 @@ namespace BladeOfTheAssassin.Core.Conditions
 
         public bool Satisfied()
         {
-            return _spell.CooldownTimeLeft > _minCooldown;
+            return _spell.CooldownTimeLeft >= _minCooldown;
         }
     }
 }
