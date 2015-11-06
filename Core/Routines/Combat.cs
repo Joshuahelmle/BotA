@@ -388,7 +388,7 @@ namespace BladeOfTheAssassin.Core.Routines
             //NoAoe
             if (HotKeyManager.NoAoe) { return await AssassinationSingleRotation(); }
 
-            if (!Me.HasAura(SpellBook.CastEnvenom) && Me.ComboPoints == 5 && !Me.CurrentTarget.HasAura(SpellBook.CastVendetta))
+            if (!Me.HasAura(SpellBook.CastEnvenom) && Me.ComboPoints == 5 && (Me.HasAttackableTarget() && !Me.CurrentTarget.HasAura(SpellBook.CastVendetta)))
             {
                 return await AssasinPoolRotation();
             }

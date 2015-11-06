@@ -6,7 +6,7 @@ namespace BladeOfTheAssassin.Core.Conditions
     {
         public bool Satisfied()
         {
-            return StyxWoW.Me.CurrentTarget.IsBoss;
+            return StyxWoW.Me.CurrentTarget != null &&  StyxWoW.Me.CurrentTarget.IsBoss;
         }
     }
 }
