@@ -111,7 +111,7 @@ namespace BladeOfTheAssassin.Core.Managers
         public void Update()
         {
             EnemyUpdate();
-            GroupUpdate();
+           // GroupUpdate();
         }
 
         /// <summary>
