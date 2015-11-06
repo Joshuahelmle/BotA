@@ -151,6 +151,7 @@ namespace BladeOfTheAssassin.Core.Managers
 
                 //get a Target to sap
 
+                /*
                 EnemiesNotInCombat = LastKnownSurroundingEnemies.Where(t => !t.Combat).ToList();
                 SapTarget = EnemiesNotInCombat.FirstOrDefault();
                 if (SapTarget != null)
@@ -165,7 +166,7 @@ namespace BladeOfTheAssassin.Core.Managers
                 {
                     LastSappedUnits.Remove(unit);
                 }
-
+                */
                 _enemyScanner.Restart();
 
             }

@@ -392,6 +392,13 @@ namespace BladeOfTheAssassin.Core.Routines
             {
                 return await AssasinPoolRotation();
             }
+
+            if (HotKeyManager.CooldownsOn)
+            {
+                if (await Abilities.Cast<ShadowReflection>(MyCurrentTarget)) return true;
+                if (await Abilities.Cast<Vendetta>(MyCurrentTarget)) return false; // no GCD
+            }
+
             if (await Abilities.Cast<Rupture>(UnitManager.Instance.LastKnownNonBleedingEnemies.FirstOrDefault())) return true;
             if (await Abilities.Cast<Rupture>(UnitManager.Instance.LastKnownBleedingEnemies.FirstOrDefault())) return true;
             if (UnitManager.Instance.LastKnownNotPoisonedEnemies.Count >= 1)
