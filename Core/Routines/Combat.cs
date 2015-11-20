@@ -73,7 +73,7 @@ namespace BladeOfTheAssassin.Core.Routines
                 if (await Abilities.Cast<KillingSpree>(MyCurrentTarget)) return true;
                 if (await Abilities.Cast<AdrenalineRush>(MyCurrentTarget)) return true;
             }
-            if (UnitManager.Instance.MfDTarget != null)
+            if (UnitManager.Instance.MfDTarget != null && !UnitManager.Instance.MfDTarget.IsBoss)
             {
                 if (await Abilities.Cast<MarkedForDeathAbility>(UnitManager.Instance.MfDTarget)) return true;
             }
@@ -95,7 +95,7 @@ namespace BladeOfTheAssassin.Core.Routines
                 if (await Abilities.Cast<KillingSpree>(MyCurrentTarget)) return true;
                 if (await Abilities.Cast<AdrenalineRush>(MyCurrentTarget)) return true;
             }
-            if(UnitManager.Instance.MfDTarget != null)
+            if(UnitManager.Instance.MfDTarget != null && !UnitManager.Instance.MfDTarget.IsBoss)
             {
                 if (await Abilities.Cast<MarkedForDeathAbility>(UnitManager.Instance.MfDTarget)) return true;
             }

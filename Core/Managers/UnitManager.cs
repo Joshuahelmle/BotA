@@ -153,7 +153,7 @@ namespace BladeOfTheAssassin.Core.Managers
 
 
                 //get a Target for Marked for Death, we are looking within 15 yards for the target with the lowest HP, which is not a Boss.
-                MfDTarget = LastKnownSurroundingEnemies.Where(o => !o.IsBoss).OrderByDescending(o => o.CurrentHealth).First();
+                MfDTarget = LastKnownSurroundingEnemies.OrderByDescending(o => o.CurrentHealth).First();
 
                 //get a Target to sap
 
