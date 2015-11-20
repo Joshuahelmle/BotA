@@ -33,7 +33,7 @@ namespace BladeOfTheAssassin.Core.Managers
 
         
         #region [BotA] - Shared Settings
-        [Setting, DefaultValue(10)]
+        [Setting, DefaultValue(15)]
         public int AoeRange { get; set; }
         [Setting, DefaultValue(500)]
         public Int32 LoCDelay { get; set; }
@@ -107,6 +107,12 @@ namespace BladeOfTheAssassin.Core.Managers
 
         [Setting, DefaultValue(true)]
         public bool T184PEnabled { get; set; }
+        [Setting, DefaultValue(false)]
+        public bool AlwaysStealth { get; set; }
+        [Setting, DefaultValue(false)]
+        public bool OffensiveVanishOnlyOnBoss { get; set; }
+        [Setting, DefaultValue(false)]
+        public bool UseVanish { get; set; }
 
 
         #endregion

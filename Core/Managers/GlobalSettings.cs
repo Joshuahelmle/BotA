@@ -46,6 +46,7 @@ namespace BladeOfTheAssassin.Core.Managers
             var presetsDirectory = @"Routines\BladeOfTheAssassin\Presets";
             if (!Directory.Exists(presetsDirectory))
                 throw new Exception("Presets directory is missing!");
+            
 
             // Determine if the Preset settings files exist for the current character //
             var characterSettingsDirectory = Path.Combine(Settings.CharacterSettingsDirectory, "BladeOfTheAssassin");

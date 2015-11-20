@@ -7,8 +7,6 @@ using Styx;
 using Styx.CommonBot;
 using Styx.WoWInternals.WoWObjects;
 using BladeOfTheAssassin.Core.Abilities.Sublety;
-using Styx.WoWInternals;
-using BladeOfTheAssassin.Core.Conditions;
 using BladeOfTheAssassin.Core.Abilities.Assasination;
 using System.Diagnostics;
 
@@ -75,6 +73,10 @@ namespace BladeOfTheAssassin.Core.Routines
                 if (await Abilities.Cast<KillingSpree>(MyCurrentTarget)) return true;
                 if (await Abilities.Cast<AdrenalineRush>(MyCurrentTarget)) return true;
             }
+            if (UnitManager.Instance.MfDTarget != null)
+            {
+                if (await Abilities.Cast<MarkedForDeathAbility>(UnitManager.Instance.MfDTarget)) return true;
+            }
             if (await Abilities.Cast<BladeFlurryCancel>(MyCurrentTarget)) return true;
                if (await Abilities.Cast<SliceNDiceAbility>(MyCurrentTarget)) return true; 
                if (await Abilities.Cast<EviscerateAbility>(MyCurrentTarget)) return true;
@@ -93,7 +95,11 @@ namespace BladeOfTheAssassin.Core.Routines
                 if (await Abilities.Cast<KillingSpree>(MyCurrentTarget)) return true;
                 if (await Abilities.Cast<AdrenalineRush>(MyCurrentTarget)) return true;
             }
-
+            if(UnitManager.Instance.MfDTarget != null)
+            {
+                if (await Abilities.Cast<MarkedForDeathAbility>(UnitManager.Instance.MfDTarget)) return true;
+            }
+            
             if (await Abilities.Cast<BladeFlurry>(MyCurrentTarget)) return true;
             if (await Abilities.Cast<SliceNDiceAbility>(MyCurrentTarget)) return true;
             if (await Abilities.Cast<EviscerateAbility>(MyCurrentTarget)) return true;
@@ -113,6 +119,7 @@ namespace BladeOfTheAssassin.Core.Routines
                 switch (UnitManager.Instance.LastKnownEnemiesInMeeleRange.Count)
                 {
                     case 0:
+                        if (UnitManager.Instance.LastKnownSurroundingEnemies.Count > 0) return await CombatSpeccRotation();
                         return false;
                     case 1:
                         return await CombatSpeccRotation();
@@ -125,10 +132,11 @@ namespace BladeOfTheAssassin.Core.Routines
             #region Subtlety
             if (Me.Specialization == WoWSpec.RogueSubtlety)
             {
-                switch (UnitManager.Instance.LastKnownSurroundingEnemies.Count)
+                switch (UnitManager.Instance.LastKnownEnemiesInMeeleRange.Count)
                 {
                     case 0:
-                        return false;
+                        if (UnitManager.Instance.LastKnownSurroundingEnemies.Count > 0) return await SubtletySingleRotation();
+                            return false;
                     case 1:
                         return await SubtletySingleRotation();
                     case 2: case 3: case 4: case 5: case 6: case 7:
@@ -144,9 +152,10 @@ namespace BladeOfTheAssassin.Core.Routines
             if (Me.Specialization == WoWSpec.RogueAssassination)
             {
 
-                 switch (UnitManager.Instance.LastKnownSurroundingEnemies.Count)
+                 switch (UnitManager.Instance.LastKnownEnemiesInMeeleRange.Count)
                 {
                     case 0:
+                        if (UnitManager.Instance.LastKnownSurroundingEnemies.Count > 0) return await AssassinationSingleRotation();
                         return false;
                         break;
                     case 1:

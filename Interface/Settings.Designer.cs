@@ -46,6 +46,7 @@ namespace BladeOfTheAssassin.Interface {
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabSettings = new System.Windows.Forms.TabPage();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.T184PCB = new System.Windows.Forms.CheckBox();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
@@ -81,8 +82,12 @@ namespace BladeOfTheAssassin.Interface {
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.SRonlyOnBossCB = new System.Windows.Forms.CheckBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.VendettaBossCB = new System.Windows.Forms.CheckBox();
+            this.UseVendettaCb = new System.Windows.Forms.CheckBox();
             this.UseSRCB = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.VanishOnlyBoss = new System.Windows.Forms.CheckBox();
+            this.UseVanish = new System.Windows.Forms.CheckBox();
             this.SDonlyBossCB = new System.Windows.Forms.CheckBox();
             this.UseSDCB = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -90,13 +95,13 @@ namespace BladeOfTheAssassin.Interface {
             this.UseARCB = new System.Windows.Forms.CheckBox();
             this.KSOnlyBossCB = new System.Windows.Forms.CheckBox();
             this.UseKSCB = new System.Windows.Forms.CheckBox();
-            this.UseVendettaCb = new System.Windows.Forms.CheckBox();
-            this.VendettaBossCB = new System.Windows.Forms.CheckBox();
+            this.AlwaysStealthCB = new System.Windows.Forms.CheckBox();
             this.vt.SuspendLayout();
             this.tabAbout.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabSettings.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.Racials.SuspendLayout();
@@ -289,6 +294,7 @@ namespace BladeOfTheAssassin.Interface {
             // tabSettings
             // 
             this.tabSettings.BackColor = System.Drawing.Color.DarkGray;
+            this.tabSettings.Controls.Add(this.groupBox8);
             this.tabSettings.Controls.Add(this.groupBox7);
             this.tabSettings.Controls.Add(this.groupBox10);
             this.tabSettings.Controls.Add(this.Racials);
@@ -303,6 +309,16 @@ namespace BladeOfTheAssassin.Interface {
             this.tabSettings.Size = new System.Drawing.Size(822, 463);
             this.tabSettings.TabIndex = 2;
             this.tabSettings.Text = "Global";
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.AlwaysStealthCB);
+            this.groupBox8.Location = new System.Drawing.Point(6, 130);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(165, 49);
+            this.groupBox8.TabIndex = 12;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Steatlh";
             // 
             // groupBox7
             // 
@@ -571,9 +587,9 @@ namespace BladeOfTheAssassin.Interface {
             // 
             this.groupBox1.Controls.Add(this.InterruptKickCB);
             this.groupBox1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(6, 130);
+            this.groupBox1.Location = new System.Drawing.Point(6, 174);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(165, 101);
+            this.groupBox1.Size = new System.Drawing.Size(165, 57);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Interrupts";
@@ -653,7 +669,7 @@ namespace BladeOfTheAssassin.Interface {
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(822, 463);
             this.tabPage1.TabIndex = 3;
-            this.tabPage1.Text = "Talents";
+            this.tabPage1.Text = "Offensive Talents";
             // 
             // SRonlyOnBossCB
             // 
@@ -676,6 +692,26 @@ namespace BladeOfTheAssassin.Interface {
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Assasination";
             // 
+            // VendettaBossCB
+            // 
+            this.VendettaBossCB.AutoSize = true;
+            this.VendettaBossCB.Location = new System.Drawing.Point(27, 67);
+            this.VendettaBossCB.Name = "VendettaBossCB";
+            this.VendettaBossCB.Size = new System.Drawing.Size(119, 21);
+            this.VendettaBossCB.TabIndex = 1;
+            this.VendettaBossCB.Text = "only on Boss";
+            this.VendettaBossCB.UseVisualStyleBackColor = true;
+            // 
+            // UseVendettaCb
+            // 
+            this.UseVendettaCb.AutoSize = true;
+            this.UseVendettaCb.Location = new System.Drawing.Point(6, 38);
+            this.UseVendettaCb.Name = "UseVendettaCb";
+            this.UseVendettaCb.Size = new System.Drawing.Size(121, 21);
+            this.UseVendettaCb.TabIndex = 0;
+            this.UseVendettaCb.Text = "Use Vendetta";
+            this.UseVendettaCb.UseVisualStyleBackColor = true;
+            // 
             // UseSRCB
             // 
             this.UseSRCB.AutoSize = true;
@@ -688,6 +724,8 @@ namespace BladeOfTheAssassin.Interface {
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.VanishOnlyBoss);
+            this.groupBox3.Controls.Add(this.UseVanish);
             this.groupBox3.Controls.Add(this.SDonlyBossCB);
             this.groupBox3.Controls.Add(this.UseSDCB);
             this.groupBox3.Location = new System.Drawing.Point(274, 169);
@@ -696,6 +734,26 @@ namespace BladeOfTheAssassin.Interface {
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Subtlety";
+            // 
+            // VanishOnlyBoss
+            // 
+            this.VanishOnlyBoss.AutoSize = true;
+            this.VanishOnlyBoss.Location = new System.Drawing.Point(38, 153);
+            this.VanishOnlyBoss.Name = "VanishOnlyBoss";
+            this.VanishOnlyBoss.Size = new System.Drawing.Size(119, 21);
+            this.VanishOnlyBoss.TabIndex = 3;
+            this.VanishOnlyBoss.Text = "only on Boss";
+            this.VanishOnlyBoss.UseVisualStyleBackColor = true;
+            // 
+            // UseVanish
+            // 
+            this.UseVanish.AutoSize = true;
+            this.UseVanish.Location = new System.Drawing.Point(23, 122);
+            this.UseVanish.Name = "UseVanish";
+            this.UseVanish.Size = new System.Drawing.Size(174, 21);
+            this.UseVanish.TabIndex = 2;
+            this.UseVanish.Text = "Use Offensive Vanish";
+            this.UseVanish.UseVisualStyleBackColor = true;
             // 
             // SDonlyBossCB
             // 
@@ -770,25 +828,15 @@ namespace BladeOfTheAssassin.Interface {
             this.UseKSCB.Text = "Use KillingSpree";
             this.UseKSCB.UseVisualStyleBackColor = true;
             // 
-            // UseVendettaCb
+            // AlwaysStealthCB
             // 
-            this.UseVendettaCb.AutoSize = true;
-            this.UseVendettaCb.Location = new System.Drawing.Point(6, 38);
-            this.UseVendettaCb.Name = "UseVendettaCb";
-            this.UseVendettaCb.Size = new System.Drawing.Size(121, 21);
-            this.UseVendettaCb.TabIndex = 0;
-            this.UseVendettaCb.Text = "Use Vendetta";
-            this.UseVendettaCb.UseVisualStyleBackColor = true;
-            // 
-            // VendettaBossCB
-            // 
-            this.VendettaBossCB.AutoSize = true;
-            this.VendettaBossCB.Location = new System.Drawing.Point(27, 67);
-            this.VendettaBossCB.Name = "VendettaBossCB";
-            this.VendettaBossCB.Size = new System.Drawing.Size(119, 21);
-            this.VendettaBossCB.TabIndex = 1;
-            this.VendettaBossCB.Text = "only on Boss";
-            this.VendettaBossCB.UseVisualStyleBackColor = true;
+            this.AlwaysStealthCB.AutoSize = true;
+            this.AlwaysStealthCB.Location = new System.Drawing.Point(6, 21);
+            this.AlwaysStealthCB.Name = "AlwaysStealthCB";
+            this.AlwaysStealthCB.Size = new System.Drawing.Size(118, 22);
+            this.AlwaysStealthCB.TabIndex = 0;
+            this.AlwaysStealthCB.Text = "Always Stealth";
+            this.AlwaysStealthCB.UseVisualStyleBackColor = true;
             // 
             // Settings
             // 
@@ -813,6 +861,8 @@ namespace BladeOfTheAssassin.Interface {
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabSettings.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.groupBox10.ResumeLayout(false);
@@ -904,5 +954,9 @@ namespace BladeOfTheAssassin.Interface {
         private PictureBox pictureBox1;
         private CheckBox VendettaBossCB;
         private CheckBox UseVendettaCb;
+        private CheckBox VanishOnlyBoss;
+        private CheckBox UseVanish;
+        private GroupBox groupBox8;
+        private CheckBox AlwaysStealthCB;
     }
 }

@@ -121,6 +121,9 @@ namespace BladeOfTheAssassin.Interface
             KSOnlyBossCB.Checked = SMInstance.Instance.KillingSpreeOnlyOnBoss;
             UseVendettaCb.Checked = SMInstance.Instance.UseVendetta;
             VendettaBossCB.Checked = SMInstance.Instance.VendettaOnlyOnBoss;
+            AlwaysStealthCB.Checked = SMInstance.Instance.AlwaysStealth;
+            UseVanish.Checked = SMInstance.Instance.UseVanish;
+            VanishOnlyBoss.Checked = SMInstance.Instance.OffensiveVanishOnlyOnBoss;
 
 
             //Trinkets
@@ -180,6 +183,11 @@ namespace BladeOfTheAssassin.Interface
             SMInstance.Instance.KillingSpreeOnlyOnBoss = KSOnlyBossCB.Checked;
             SMInstance.Instance.UseVendetta = UseVendettaCb.Checked;
             SMInstance.Instance.VendettaOnlyOnBoss = VendettaBossCB.Checked;
+             SMInstance.Instance.AlwaysStealth = AlwaysStealthCB.Checked;
+            SMInstance.Instance.UseVanish = UseVanish.Checked;
+            SMInstance.Instance.OffensiveVanishOnlyOnBoss = VanishOnlyBoss.Checked;
+
+
 
             //Trinkets
             SMInstance.Instance.UseTrinket1 = Trinket1CB.Checked;
@@ -333,8 +341,9 @@ namespace BladeOfTheAssassin.Interface
             base.WndProc(ref m);
         }
 
+
         #endregion
 
-      
+     
     }
 }

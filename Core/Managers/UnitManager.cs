@@ -74,6 +74,7 @@ namespace BladeOfTheAssassin.Core.Managers
         public Dictionary<WoWUnit, DateTime> LastSappedUnits { get; private set; }
         public List<WoWUnit> SapTargetDelete { get; private set; }
         public WoWUnit SapTarget { get; set; }
+        public WoWUnit MfDTarget { get; set; }
         
         /// <summary>
         ///     Gets the list of the last known allies that have a given property
@@ -100,6 +101,7 @@ namespace BladeOfTheAssassin.Core.Managers
             LastKnownBleedingEnemies = new List<WoWUnit>();
             LastKnownNotPoisonedEnemies = new List<WoWUnit>();
             SapTarget = null;
+            MfDTarget = null;
 
             _enemyScanner.Start();
             _groupScanner.Start();
@@ -148,6 +150,10 @@ namespace BladeOfTheAssassin.Core.Managers
                 LastKnownPoisonedEnemies =
                     LastKnownSurroundingEnemies.Where(o => o.AuraExists(SpellBook.AuraDeadlyPoison, true)).ToList();
                 if (Main.Debug) Log.Combat("sorrounding  poisoned :" + LastKnownPoisonedEnemies.Count);
+
+
+                //get a Target for Marked for Death, we are looking within 15 yards for the target with the lowest HP, which is not a Boss.
+                MfDTarget = LastKnownSurroundingEnemies.Where(o => !o.IsBoss).OrderByDescending(o => o.CurrentHealth).First();
 
                 //get a Target to sap
 

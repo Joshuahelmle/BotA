@@ -37,34 +37,34 @@ namespace BladeOfTheAssassin.Core.Routines
                 if (Me.IsDead || Me.IsGhost || Me.IsCasting || Me.IsChanneling || Me.IsFlying || Me.OnTaxi || Me.Mounted)
                     return false;
 
+                if (Main.Debug)
+                {
+                    Log.Diagnostics("In PreCombatRotationCall()");
+                }
 
-                //return await DpsPreCombatRotation();
-                
+
+                if (await Abilities.Cast<StealthAbility>(Me)) return true;
+                //if (await Abilities.Cast<SapAbility>(MyCurrentTarget)) return true;
+                //if (await Abilities.Cast<SapAbility>(UnitManager.Instance.SapTarget)) return true;
+                if ((Me.Specialization == WoWSpec.RogueCombat))
+                {
+                    if (await Abilities.Cast<InstantPoison>(Me)) return true;
+                }
+                else { if (await Abilities.Cast<DeadlyPoison>(Me)) return true; }
+                if (await Abilities.Cast<WoundPoison>(Me)) return true;
+                if (await Abilities.Cast<CripplingPoison>(Me)) return true;
+                if (Me.Specialization == WoWSpec.RogueSubtlety && (Me.Combat || HotKeyManager.Questing || Me.AuraExists(SpellBook.AuraVanish)))
+                {
+                    return await Combat.Rotation();
+                }
+
+
             }
 
             if (Me.IsDead || Me.IsGhost || Me.IsCasting || Me.IsChanneling || Me.IsFlying || Me.OnTaxi || Me.Mounted)
                 return false;
 
-            if (Main.Debug)
-            {
-                Log.Diagnostics("In PreCombatRotationCall()");
-            }
-
             
-            if (await Abilities.Cast<StealthAbility>(Me)) return true;
-            //if (await Abilities.Cast<SapAbility>(MyCurrentTarget)) return true;
-            //if (await Abilities.Cast<SapAbility>(UnitManager.Instance.SapTarget)) return true;
-           if ((Me.Specialization == WoWSpec.RogueCombat)){
-            if (await Abilities.Cast<InstantPoison>(Me)) return true;
-           }
-           else { if (await Abilities.Cast<DeadlyPoison>(Me)) return true;}
-            if (await Abilities.Cast<WoundPoison>(Me)) return true;
-            if (await Abilities.Cast<CripplingPoison>(Me)) return true;
-            if (Me.Specialization == WoWSpec.RogueSubtlety && (Me.Combat || HotKeyManager.Questing || Me.AuraExists(SpellBook.AuraVanish)))
-            {
-                return await Combat.Rotation();
-            }
-           
             
         
            // if (await Abilities.Cast<BurstOfSpeedAbility>(Me)) return true;
