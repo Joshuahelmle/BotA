@@ -27,7 +27,7 @@ namespace BladeOfTheAssassin.Core.Abilities.Combat
             Conditions.Add(new BooleanCondition(target != null));
             Conditions.Add(new InMeeleRangeCondition(target));
             Conditions.Add(new BooleanCondition(Me.AuraStacks(SpellBook.AuraAnticipation) <= 1));
-            Conditions.Add(new ConditionAndList(
+            Conditions.Add(new ConditionSwitchTester(
                 new BooleanCondition(SettingsManager.Instance.OffensiveVanishOnlyOnBoss),
                 new OnlyOnBossCondition()));
             Conditions.Add(new BooleanCondition(SettingsManager.Instance.UseVanish));
