@@ -47,6 +47,7 @@ namespace BladeOfTheAssassin.Interface {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabSettings = new System.Windows.Forms.TabPage();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.AlwaysStealthCB = new System.Windows.Forms.CheckBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.T184PCB = new System.Windows.Forms.CheckBox();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
@@ -95,7 +96,7 @@ namespace BladeOfTheAssassin.Interface {
             this.UseARCB = new System.Windows.Forms.CheckBox();
             this.KSOnlyBossCB = new System.Windows.Forms.CheckBox();
             this.UseKSCB = new System.Windows.Forms.CheckBox();
-            this.AlwaysStealthCB = new System.Windows.Forms.CheckBox();
+            this.MFDCB = new System.Windows.Forms.CheckBox();
             this.vt.SuspendLayout();
             this.tabAbout.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -319,6 +320,16 @@ namespace BladeOfTheAssassin.Interface {
             this.groupBox8.TabIndex = 12;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Steatlh";
+            // 
+            // AlwaysStealthCB
+            // 
+            this.AlwaysStealthCB.AutoSize = true;
+            this.AlwaysStealthCB.Location = new System.Drawing.Point(6, 21);
+            this.AlwaysStealthCB.Name = "AlwaysStealthCB";
+            this.AlwaysStealthCB.Size = new System.Drawing.Size(118, 22);
+            this.AlwaysStealthCB.TabIndex = 0;
+            this.AlwaysStealthCB.Text = "Always Stealth";
+            this.AlwaysStealthCB.UseVisualStyleBackColor = true;
             // 
             // groupBox7
             // 
@@ -777,6 +788,7 @@ namespace BladeOfTheAssassin.Interface {
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.MFDCB);
             this.groupBox2.Controls.Add(this.ARonlyBossCB);
             this.groupBox2.Controls.Add(this.UseARCB);
             this.groupBox2.Controls.Add(this.KSOnlyBossCB);
@@ -828,15 +840,15 @@ namespace BladeOfTheAssassin.Interface {
             this.UseKSCB.Text = "Use KillingSpree";
             this.UseKSCB.UseVisualStyleBackColor = true;
             // 
-            // AlwaysStealthCB
+            // MFDCB
             // 
-            this.AlwaysStealthCB.AutoSize = true;
-            this.AlwaysStealthCB.Location = new System.Drawing.Point(6, 21);
-            this.AlwaysStealthCB.Name = "AlwaysStealthCB";
-            this.AlwaysStealthCB.Size = new System.Drawing.Size(118, 22);
-            this.AlwaysStealthCB.TabIndex = 0;
-            this.AlwaysStealthCB.Text = "Always Stealth";
-            this.AlwaysStealthCB.UseVisualStyleBackColor = true;
+            this.MFDCB.AutoSize = true;
+            this.MFDCB.Location = new System.Drawing.Point(22, 204);
+            this.MFDCB.Name = "MFDCB";
+            this.MFDCB.Size = new System.Drawing.Size(182, 21);
+            this.MFDCB.TabIndex = 4;
+            this.MFDCB.Text = "use Marked For Death";
+            this.MFDCB.UseVisualStyleBackColor = true;
             // 
             // Settings
             // 
@@ -958,5 +970,6 @@ namespace BladeOfTheAssassin.Interface {
         private CheckBox UseVanish;
         private GroupBox groupBox8;
         private CheckBox AlwaysStealthCB;
+        private CheckBox MFDCB;
     }
 }

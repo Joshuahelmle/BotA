@@ -113,6 +113,8 @@ namespace BladeOfTheAssassin.Core.Managers
         public bool OffensiveVanishOnlyOnBoss { get; set; }
         [Setting, DefaultValue(false)]
         public bool UseVanish { get; set; }
+        [Setting, DefaultValue(false)]
+        public bool UseMFD { get; set; }
 
 
         #endregion

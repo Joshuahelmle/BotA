@@ -124,6 +124,8 @@ namespace BladeOfTheAssassin.Interface
             AlwaysStealthCB.Checked = SMInstance.Instance.AlwaysStealth;
             UseVanish.Checked = SMInstance.Instance.UseVanish;
             VanishOnlyBoss.Checked = SMInstance.Instance.OffensiveVanishOnlyOnBoss;
+            MFDCB.Checked = SMInstance.Instance.UseMFD;
+
 
 
             //Trinkets
@@ -186,6 +188,7 @@ namespace BladeOfTheAssassin.Interface
              SMInstance.Instance.AlwaysStealth = AlwaysStealthCB.Checked;
             SMInstance.Instance.UseVanish = UseVanish.Checked;
             SMInstance.Instance.OffensiveVanishOnlyOnBoss = VanishOnlyBoss.Checked;
+            SMInstance.Instance.UseMFD = MFDCB.Checked;
 
 
 
